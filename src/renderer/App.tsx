@@ -6,6 +6,7 @@ import icon from '../../assets/icon.svg';
 import './App.css';
 import Launcher from './views/Launcher';
 import AirClip from './views/AirClip';
+import Homepage from './views/Homepage';
 
 const Hello = () => {
   return (
@@ -54,7 +55,7 @@ class Page extends React.Component {
     return (
       <Router>
         <Routes>
-          <Route element={<Launcher />} path="/" />
+          <Route element={<Homepage />} path="/" />
           <Route element={<AirClip />} path="/app/airclip" />
         </Routes>
       </Router>

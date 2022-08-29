@@ -1,4 +1,14 @@
-import { Col, Divider, Row, Tabs, Card, List, Button, Avatar, Badge } from 'antd';
+import {
+  Col,
+  Divider,
+  Row,
+  Tabs,
+  Card,
+  List,
+  Button,
+  Avatar,
+  Badge,
+} from 'antd';
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
@@ -7,7 +17,7 @@ import {
   AppleOutlined,
   WindowsOutlined,
   DeleteOutlined,
-  EditOutlined,
+  DisconnectOutlined,
   EllipsisOutlined,
   SettingOutlined,
 } from '@ant-design/icons';
@@ -25,60 +35,32 @@ class Launcher extends React.Component {
     this.state = {
       app_list: [
         {
-          id: 1,
-          title: 'AirClip',
-          description: 'Transfer your clipboard between devices',
-          icon: 'https://s1.ax1x.com/2022/08/16/vwrst1.png',
-          path: '/app/airclip',
-          badge_count: 0,
+          id: 0,
+          title: "Andision's ThinkPad X390",
+          description: '',
+          icon: 'https://s1.ax1x.com/2022/08/17/vBeTNn.png',
+          badge_count: 2,
         },
         {
-          id: 2,
-          title: 'APP Name1',
-          description: 'This is the description of the application',
-          icon: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',
-          path: '/app/',
+          id: 1,
+          title: "Andision's iPhone X",
+          description: '',
+          icon: 'https://s1.ax1x.com/2022/08/16/v0JfQs.png',
           badge_count: 1,
         },
         {
-          id: 3,
-          title: 'APP Name2',
-          description: 'This is the description of the application',
-          icon: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',
-          path: '/app/',
+          id: 2,
+          title: "Andision's HUAWEI Mate 30",
+          description: '',
+          icon: 'https://s1.ax1x.com/2022/08/17/vBelm4.png',
           badge_count: 5,
         },
         {
-          id: 4,
-          title: 'APP Title',
-          description: 'This is the description of the application',
-          icon: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',
-          path: '/app/',
-          badge_count: 10,
-        },
-        {
-          id: 5,
-          title: 'APP Title',
-          description: 'This is the description of the application',
-          icon: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',
-          path: '/app/',
-          badge_count: 100,
-        },
-        {
-          id: 6,
-          title: 'APP Title',
-          description: 'This is the description of the application',
-          icon: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',
-          path: '/app/',
-          badge_count: 0,
-        },
-        {
-          id: 7,
-          title: 'APP Title',
-          description: 'This is the description of the application',
-          icon: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',
-          path: '/app/',
-          badge_count: 0,
+          id: 3,
+          title: "Andision's HUAWEI Mate 31",
+          description: '',
+          icon: 'https://s1.ax1x.com/2022/08/17/vBelm4.png',
+          badge_count: 12,
         },
       ],
     };
@@ -89,11 +71,11 @@ class Launcher extends React.Component {
     console.log('click app id= ', id, 'path= ', path);
     console.log('event= ', event.target.nodeName);
 
-    if (event.target.nodeName == 'DIV' || event.target.nodeName == 'IMG') {
-      window.location.href = `#${path}`;
-    } else {
-      console.log('event= ', event.target.nodeName);
-    }
+    // if (event.target.nodeName == 'DIV' || event.target.nodeName == 'IMG') {
+    //   window.location.href = `#${path}`;
+    // } else {
+    //   console.log('event= ', event.target.nodeName);
+    // }
   };
 
   render() {
@@ -118,15 +100,21 @@ class Launcher extends React.Component {
                 xl={6}
               >
                 <Badge count={item.badge_count} overflowCount={99}>
-
                   <Card
                     onClick={(e) => this.handleCardClick(e, item.id, item.path)}
                     className="app-block"
-                    cover={<img alt="icon" src={item.icon} />}
+                    cover={
+                      <img
+                        alt="icon"
+                        src={item.icon}
+                        width={262}
+                        height={159}
+                      />
+                    }
                     hoverable
                     actions={[
                       <SettingOutlined key="setting" />,
-                      <DeleteOutlined key="edit" />,
+                      <DisconnectOutlined key="edit" />,
                       <EllipsisOutlined key="ellipsis" />,
                     ]}
                   >
