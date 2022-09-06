@@ -109,6 +109,8 @@ const data2 = [
 ];
 
 class AirClip extends React.Component {
+  URL_PREFIX = 'http://localhost:5000/app/airclip';
+
   constructor(props) {
     super(props);
 
@@ -134,8 +136,8 @@ class AirClip extends React.Component {
 
   getClipboard = () => {
     console.log('click refresh!');
-    axios.get('http://localhost:5000/get_clip').then((response) => {
-      console.log(response);
+    axios.get(`${this.URL_PREFIX}/get_clip`).then((response) => {
+      // console.log(response);
       // return response.data;
       const ret = response.data;
       console.log('ret', ret);
