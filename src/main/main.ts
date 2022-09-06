@@ -160,7 +160,8 @@ const createPyProc = () => {
   const port = '5000';
   // let script = path.join(__dirname, 'py', 'api.py')
   const script =
-    'C:/Users/Andision/Documents/GitHub/your-project-name/py/api.py';
+    // 'C:/Users/Andision/Documents/GitHub/NUIX/py/api.py';
+    'C:/Users/Andision/Documents/GitHub/NUIX/py/backend.py';
   pyProc = require('child_process').spawn('python', [script, port]);
   if (pyProc != null) {
     console.log('child process success');

@@ -1,8 +1,11 @@
 from flask import Flask, request
 import time
 import random
+import database
 
 app = Flask(__name__)  # 在当前文件下创建应用
+
+IS_DEBUG = True
 
 USER_NAME = "username"
 USER_ID = "userid"
@@ -17,12 +20,12 @@ DATA_TRANSFER_INT_UPPER_BOUND = 99999999
 
 STATUS_CODE_DICT = {
     'DEVICE_PAIR_LIST_FIND_NONE': -1,
-    'DEVICE_PAIR_VERIFY_SUCCESS': 1000,
-    'DEVICE_PAIR_VERIFY_ERROR': 1001,
-    'DEVICE_PAIR_VERIFY_FAIL': 1002,
-    'TRANSFER_KEY_GENERATE_SUCCESS': 1000,
-    'TRANSFER_KEY_GENERATE_ERROR': 1001,
-    'TRANSFER_KEY_GENERATE_FAIL': 1002,
+    'DEVICE_PAIR_VERIFY_SUCCESS': '1000',
+    'DEVICE_PAIR_VERIFY_ERROR': '1001',
+    'DEVICE_PAIR_VERIFY_FAIL': '1002',
+    'TRANSFER_KEY_GENERATE_SUCCESS': '1000',
+    'TRANSFER_KEY_GENERATE_ERROR': '1001',
+    'TRANSFER_KEY_GENERATE_FAIL': '1002',
 
 }
 
@@ -55,9 +58,20 @@ def device_pair_init():
     init_random_int = str(random.randint(0, 99999999)).zfill(8)
 
     encrypt_str = AES_Encryption(
-        content='ADS::'+init_random_int, key=sub_device_id+pin_code)
+        content=init_random_int, key=sub_device_id+pin_code)
 
-    return {'code': '', "encrypt_str": encrypt_str}
+    PAIRED_DEVICE_LIST[sub_device_id] = {
+        'add_timestamp' : 'timestamp',
+        'verified' : False,
+        'init_random_int' : init_random_int,
+    }
+
+    ret = {'code': '', "encrypt_str": encrypt_str}
+
+    if IS_DEBUG:
+            print(ret)
+
+    return ret
 
 
 @app.route("/device_pair_verify", methods=["GET", "POST"])
@@ -65,13 +79,32 @@ def device_pair_verify():
     sub_device_id = request.args.get('device_id')
     init_random_int_get = request.args.get('init_random_int')
     init_random_int_save = PAIRED_DEVICE_LIST.get(
-        sub_device_id, STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE'])
+        sub_device_id, {'init_random_int' :STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']})['init_random_int']
     if init_random_int_save == STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']:
-        return {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_ERROR']}
+        ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_ERROR']}
+
+        if IS_DEBUG:
+            print(ret)
+
+        return ret
+        
     elif init_random_int_save == init_random_int_get:
-        return {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_SUCCESS']}
+        ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_SUCCESS']}
+
+        if IS_DEBUG:
+            print(ret)
+
+        return ret
     else:
-        return {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_FAIL']}
+        ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_FAIL']}
+
+        if IS_DEBUG:
+            print("=====DEBUG=====")
+            print(init_random_int_get,init_random_int_save)
+            print(ret)
+            print(PAIRED_DEVICE_LIST)
+
+        return ret
 
 
 @app.route("/transfer_key_generate", methods=["GET", "POST"])
@@ -83,7 +116,7 @@ def transfer_key_generate():
                      DATA_TRANSFER_INT_UPPER_BOUND)).zfill(8)
 
     init_random_int_save = PAIRED_DEVICE_LIST.get(
-        sub_device_id, STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE'])
+        sub_device_id, {'init_random_int' :STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']})['init_random_int']
     if init_random_int_save == STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']:
         return {'code': STATUS_CODE_DICT['TRANSFER_KEY_GENERATE_ERROR']}
     else:
@@ -147,6 +180,7 @@ def say_hello(name):  # 试图函数
 def new_clip(name):  # 试图函数
     curtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     clip_list.append({'time': curtime, 'content': name})
+    database.add_item(curtime,name,'test')
     return "new_clip: %s" % name
 
 
@@ -156,8 +190,17 @@ def get_clip():  # 试图函数
     ret = clip_list.copy()
     ret.reverse()
 
-    return ret
+    l = database.show_item()
+    print(l)
+
+    new_ret = []
+    for i in l:
+        new_ret.append({'time': i[0], 'content': i[1]})
+
+    new_ret.reverse()
+
+    return new_ret
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=50000)  # 运行app
+    app.run(debug=True, port=5000)  # 运行app
