@@ -6,6 +6,7 @@ import utils
 import json
 import queue
 import importlib
+import threading
 
 app = Flask(__name__)  # 在当前文件下创建应用
 
@@ -67,7 +68,7 @@ def test():
     print('l. ')
     return l
 
-# ==========Device Pair==========
+# ==========Device=========
 
 
 @app.route('/device_pair_init', methods=['GET', 'POST'])
@@ -88,7 +89,7 @@ def device_pair_init():
     # }
     # # *****old*****
     database.sys_add_paired_device(
-        sub_device_id, time.time(), init_random_int, False)
+        sub_device_id,sub_device_id, time.time(), init_random_int, False)
 
     ret = {'code': '', 'encrypt_str': encrypt_str}
 
@@ -106,7 +107,7 @@ def device_pair_verify():
     #     sub_device_id, {'init_random_int' :STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']})['init_random_int']
     # *****old*****
     get_from_database = database.sys_get_paired_device(sub_device_id)
-    init_random_int_save = get_from_database[0][2] if len(
+    init_random_int_save = get_from_database[0][3] if len(
         get_from_database) else STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']
 
     if init_random_int_save == STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']:
@@ -127,11 +128,19 @@ def device_pair_verify():
         ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_FAIL']}
 
         printLog('=====DEBUG=====')
-        printLog(init_random_int_get, init_random_int_save)
+        printLog(get_from_database)
+        printLog(init_random_int_get)
+        printLog(init_random_int_save)
         printLog(ret)
-        printLog(PAIRED_DEVICE_LIST)
 
         return ret
+
+
+@app.route('/device_get_paired', methods=['GET', 'POST'])
+def device_get_paired():
+    get_from_database = database.sys_get_paired_device()
+    printLog(get_from_database)
+    return 'ok'
 
 
 # ==========Transfer Data==========
@@ -150,7 +159,7 @@ def transfer_key_generate():
     # *****old*****
 
     get_from_database = database.sys_get_paired_device(sub_device_id)
-    init_random_int_save = get_from_database[0][2] if len(
+    init_random_int_save = get_from_database[0][3] if len(
         get_from_database) else STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']
 
     if init_random_int_save == STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']:
@@ -199,6 +208,24 @@ def transfer_data():
             'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_FAIL'], 'log': str(exc)}
 
     return ret
+
+sub_device_clipboard_list = ['haha']
+mutex = threading.Lock()
+@app.route('/get_data', methods=['GET', 'POST'])
+def get_data():
+    t = random.randint(0,10)
+    ret = ''
+    global sub_device_clipboard_list
+    mutex.acquire()
+    if t<5:
+        ret = "new_clip"+str(t)
+        sub_device_clipboard_list.append(t)
+    printLog(t)
+    sub_device_clipboard_list = []
+    mutex.release()
+
+    return ret
+
 
 # ==========Trigger==========
 
@@ -251,8 +278,8 @@ APP_LIST = [
         'app_show_name': 'AirClip',
         'script_list': [
             {
-            'name': 'airclip',
-            'prefix': '/airclip'
+                'name': 'airclip',
+                'prefix': '/airclip'
             }
         ]
     },
@@ -278,9 +305,25 @@ def add_app():
     APP_LIST[app_id] = app_config
 
 
+# ==========Sensor==========
+
+def handleClipboardChange(args):
+    while(True):
+        print("我是线程%s" % args)
+        time.sleep(2)
+
+# t1 = threading.Thread(target=handleClipboardChange, args=(1,))
+# t2 = threading.Thread(target=handleClipboardChange, args=(2,))
+# t1.start()
+# t2.start()
+
+
+# ==========Init==========
+# =====Add Router=====
 for my_app in APP_LIST:
     for script in my_app['script_list']:
         module = importlib.import_module('app.{}'.format(script['name']))
-        app.register_blueprint(module.app,url_prefix='/app'+script['prefix'])
-if __name__ == '__main__':
-    app.run(debug=IS_DEBUG, port=5000)  # 运行app
+        app.register_blueprint(module.app, url_prefix='/app'+script['prefix'])
+
+# =====Start Flask=====
+app.run(debug=IS_DEBUG, host='0.0.0.0', port=5000)  # 运行app
