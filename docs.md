@@ -49,3 +49,9 @@ PAIRED_DEVICE_LIST={
     "payload":PAYLOAD
 }
 ```
+
+TODO
+
+- 每个应用文件放一起，层次结构
+- Socket.IO
+- WIFI Direct
