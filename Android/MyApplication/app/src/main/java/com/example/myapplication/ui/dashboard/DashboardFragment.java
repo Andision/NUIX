@@ -33,7 +33,7 @@ public class DashboardFragment extends Fragment {
     private FragmentDashboardBinding binding;
 
     private String saved_encrypt_str;
-    private String DEVICE_ID = "android_phone";
+    private String DEVICE_ID = "Pixel 2";
     private String AES_Decryption(String content, String key){
         return content.substring(0,8);
     }
@@ -61,7 +61,7 @@ public class DashboardFragment extends Fragment {
 
                 OkHttpClient okHttpClient = new OkHttpClient();
                 //2.创建Request对象，设置一个url地址（百度地址）,设置请求方式。
-                Request request = new Request.Builder().url("http://10.0.2.2:5000/device_pair_init?device_id="+DEVICE_ID).method("GET",null).build();
+                Request request = new Request.Builder().url("http://192.168.10.93:5000/device_pair_init?device_id="+DEVICE_ID).method("GET",null).build();
                 //3.创建一个call对象,参数就是Request请求对象
                 Call call = okHttpClient.newCall(request);
                 //4.请求加入调度，重写回调方法
@@ -108,7 +108,7 @@ public class DashboardFragment extends Fragment {
 
                 OkHttpClient okHttpClient = new OkHttpClient();
                 //2.创建Request对象，设置一个url地址（百度地址）,设置请求方式。
-                Request request = new Request.Builder().url("http://10.0.2.2:5000/device_pair_verify?device_id="+DEVICE_ID+"&init_random_int="+init_random_int).method("GET",null).build();
+                Request request = new Request.Builder().url("http://192.168.10.93:5000/device_pair_verify?device_id="+DEVICE_ID+"&init_random_int="+init_random_int).method("GET",null).build();
                 //3.创建一个call对象,参数就是Request请求对象
                 Call call = okHttpClient.newCall(request);
                 //4.请求加入调度，重写回调方法

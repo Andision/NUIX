@@ -1,6 +1,7 @@
 package com.example.myapplication.ui.home;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,6 +31,7 @@ import okhttp3.Response;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private String URL_PREFIX = "http://192.168.10.93:5000/app/airclip";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -65,7 +67,7 @@ public class HomeFragment extends Fragment {
                 Log.d("response","START HTTP REQUEST");
                 OkHttpClient okHttpClient = new OkHttpClient();
                 //2.创建Request对象，设置一个url地址（百度地址）,设置请求方式。
-                Request request = new Request.Builder().url("http://10.0.2.2:5000/new_clip/"+clip_text).method("GET",null).build();
+                Request request = new Request.Builder().url(URL_PREFIX+"/new_clip/"+clip_text).method("GET",null).build();
                 //3.创建一个call对象,参数就是Request请求对象
                 Call call = okHttpClient.newCall(request);
                 //4.请求加入调度，重写回调方法
@@ -74,9 +76,11 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onFailure(Call call, IOException e) {
                         Log.d("response","FAILURE");
-                        Looper.prepare();
-                        Toast.makeText(getActivity(), "FAILURE", Toast.LENGTH_SHORT).show();
-                        Looper.loop();
+                        e.printStackTrace();
+                        new Handler(Looper.getMainLooper()).post(() -> {
+
+                          Toast.makeText(getContext(), "FAILURE", Toast.LENGTH_SHORT).show();
+                        });
                     }
                     //请求成功执行的方法
                     @Override
