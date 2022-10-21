@@ -72,7 +72,7 @@ def sys_verify_paired_device(device_id):
 def sys_update_transfer_data_key(device_id, key, expired_time):
     con, cur = open_table('sys_paired_device')
     # cur.execute('SELECT device_id, init_time, init_key, init_verified FROM sys_paired_device ')
-    print('UPDATE sys_paired_device SET transfer_data_key="{}",transfer_data_key_expire_time="{}" WHERE device_id="{}"'.format(key, expired_time, device_id))
+    # print('UPDATE sys_paired_device SET transfer_data_key="{}",transfer_data_key_expire_time="{}" WHERE device_id="{}"'.format(key, expired_time, device_id))
     cur.execute(
         'UPDATE sys_paired_device SET transfer_data_key="{}",transfer_data_key_expire_time="{}" WHERE device_id="{}"'.format(key, expired_time, device_id))
     con.commit()
