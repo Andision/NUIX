@@ -6,7 +6,7 @@ DATABSE_DIR = 'C:/Users/Andision/Documents/GitHub/NUIX/py/system.db'
 # ==========INIT==========
 
 TABLE_CONF = {
-    'sys_paired_device': '(device_id primary key, device_name, init_time, init_random_int, init_verified, transfer_data_key,transfer_data_key_expire_time )',
+    'sys_paired_device': '(device_id primary key, device_name, init_time, init_key, init_verified, transfer_data_key,transfer_data_key_expire_time )',
     'app_airclip_clipboard': '(time primary key, content, device)'
 }
 
@@ -35,30 +35,35 @@ def get_cur_search_result(cur):
 # ==========SYSTEM==========
 
 
-def sys_add_paired_device(device_id, device_name, init_time, init_random_int, init_verified):
+def sys_add_paired_device(device_id, device_name, init_time, init_key, init_verified=False):
     con, cur = open_table('sys_paired_device')
     cur.execute(
         'DELETE FROM sys_paired_device WHERE device_id="{}"'.format(device_id))
-    cur.execute('INSERT INTO sys_paired_device(device_id, device_name,init_time, init_random_int, init_verified) values(?,?,?,?,?)',
-                (device_id, device_name, init_time, init_random_int, init_verified))
+    cur.execute('INSERT INTO sys_paired_device(device_id, device_name,init_time, init_key, init_verified) values(?,?,?,?,?)',
+                (device_id, device_name, init_time, init_key, init_verified))
     con.commit()
 
 
 def sys_get_paired_device(device_id=None):
+    '''Get paired device info in database.
+
+    :param device_id: If given, this function will return the info of this device id. Else, this function will return all paired device.
+
+    '''
     con, cur = open_table('sys_paired_device')
-    # cur.execute('SELECT device_id, init_time, init_random_int, init_verified FROM sys_paired_device ')
+    # cur.execute('SELECT device_id, init_time, init_key, init_verified FROM sys_paired_device ')
     if device_id == None:
         cur.execute(
-            'SELECT device_id, device_name, init_time, init_random_int, init_verified FROM sys_paired_device')
+            'SELECT device_id, device_name, init_time, init_key, init_verified FROM sys_paired_device')
     else:
         cur.execute(
-            'SELECT device_id, device_name, init_time, init_random_int, init_verified FROM sys_paired_device WHERE device_id="{}"'.format(device_id))
+            'SELECT device_id, device_name, init_time, init_key, init_verified FROM sys_paired_device WHERE device_id="{}"'.format(device_id))
     return get_cur_search_result(cur)
 
 
 def sys_verify_paired_device(device_id):
     con, cur = open_table('sys_paired_device')
-    # cur.execute('SELECT device_id, init_time, init_random_int, init_verified FROM sys_paired_device ')
+    # cur.execute('SELECT device_id, init_time, init_key, init_verified FROM sys_paired_device ')
     cur.execute(
         'UPDATE sys_paired_device SET init_verified=1 WHERE device_id="{}"'.format(device_id))
     con.commit()
@@ -66,15 +71,16 @@ def sys_verify_paired_device(device_id):
 
 def sys_update_transfer_data_key(device_id, key, expired_time):
     con, cur = open_table('sys_paired_device')
-    # cur.execute('SELECT device_id, init_time, init_random_int, init_verified FROM sys_paired_device ')
+    # cur.execute('SELECT device_id, init_time, init_key, init_verified FROM sys_paired_device ')
+    print('UPDATE sys_paired_device SET transfer_data_key="{}",transfer_data_key_expire_time="{}" WHERE device_id="{}"'.format(key, expired_time, device_id))
     cur.execute(
-        'UPDATE sys_paired_device SET transfer_data_key={},transfer_data_key_expire_time={} WHERE device_id="{}"'.format(key, expired_time, device_id))
+        'UPDATE sys_paired_device SET transfer_data_key="{}",transfer_data_key_expire_time="{}" WHERE device_id="{}"'.format(key, expired_time, device_id))
     con.commit()
 
 
 def sys_get_transfer_data_key(device_id):
     con, cur = open_table('sys_paired_device')
-    # cur.execute('SELECT device_id, init_time, init_random_int, init_verified FROM sys_paired_device ')
+    # cur.execute('SELECT device_id, init_time, init_key, init_verified FROM sys_paired_device ')
     cur.execute(
         'SELECT transfer_data_key,transfer_data_key_expire_time FROM sys_paired_device WHERE device_id="{}"'.format(device_id))
     return get_cur_search_result(cur)
