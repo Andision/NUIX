@@ -13,7 +13,8 @@ DEVICE_PAIR_PIN_LOWER_BOUND = 0
 DEVICE_PAIR_PIN_UPPER_BOUND = 999999
 
 # TRANSFER_DATA_KEY_VALID_TIME = 10 *1000  # 10 minutes - 10 seconds
-TRANSFER_DATA_KEY_VALID_TIME = (10 * 60 - 10)*1000  # (10 minutes - 10 seconds) unit=ms
+# (10 minutes - 10 seconds) unit=ms
+TRANSFER_DATA_KEY_VALID_TIME = (10 * 60 - 10)*1000
 
 STATUS_CODE_DICT = {
     "OK": 2000,
@@ -21,8 +22,8 @@ STATUS_CODE_DICT = {
     "DEVICE_PAIR_VERIFY_DEVICE_NOT_FOUND": 3001,
     "DEVICE_PAIR_VERIFY_ID_NOT_MATCH": 3002,
     "DATA_TRANSFER_KEY_GENERATE_DEVICE_NOT_FOUND": 3003,
-    "RECEIVE_DATA_KEY_EXPIRED":3004,
-    "RECEIVE_DATA_DEVICE_NOT_FOUND":3005
+    "RECEIVE_DATA_KEY_EXPIRED": 3004,
+    "RECEIVE_DATA_DEVICE_NOT_FOUND": 3005
 }
 
 
@@ -102,7 +103,8 @@ async def devicePairVerify(sid, *args):
             return STATUS_CODE_DICT["OK"]
 
         else:
-            myPrintLog('devicePairVerify', 'device id not match get={get} save={save}'.format(get=device_id_get,save=device_id))
+            myPrintLog('devicePairVerify', 'device id not match get={get} save={save}'.format(
+                get=device_id_get, save=device_id))
             return STATUS_CODE_DICT["DEVICE_PAIR_VERIFY_ID_NOT_MATCH"]
     else:
         myPrintLog('devicePairVerify', 'device not found in db')
@@ -138,6 +140,7 @@ async def dataTransferKeyGen(sid, *args):
         myPrintLog('dataTransferKeyGen', 'device not found in db')
         return STATUS_CODE_DICT["DATA_TRANSFER_KEY_GENERATE_DEVICE_NOT_FOUND"]
 
+
 async def receiveData(sid, *args):
     '''
     Receive data from client device.
@@ -149,7 +152,7 @@ async def receiveData(sid, *args):
     '''
     device_id = args[0]
     encrypt_str = args[1]
-    
+
     get_from_database = database.sys_get_transfer_data_key(device_id)
 
     transfer_key = get_from_database[0][0] if len(
@@ -160,23 +163,23 @@ async def receiveData(sid, *args):
         current_time = time.time()
 
         if current_time > transfer_key_expired_time:
-            myPrintLog("receiveData","Key expired")
+            myPrintLog("receiveData", "Key expired")
             return STATUS_CODE_DICT["RECEIVE_DATA_KEY_EXPIRED"]
 
-        decrypt_str = utils.AES_Decryption(content=encrypt_str, key=transfer_key)
+        decrypt_str = utils.AES_Decryption(
+            content=encrypt_str, key=transfer_key)
 
-        myPrintLog("receiveData",decrypt_str)
+        myPrintLog("receiveData", decrypt_str)
         return STATUS_CODE_DICT["OK"]
 
     else:
-        myPrintLog("receiveData","Device not found")
+        myPrintLog("receiveData", "Device not found")
         return STATUS_CODE_DICT["RECEIVE_DATA_DEVICE_NOT_FOUND"]
 
 
 async def test(sid, *args):
-    myPrintLog("pair",args)
+    myPrintLog("pair", args)
     return "OK"
-
 
 
 if __name__ == '__main__':
