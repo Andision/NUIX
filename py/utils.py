@@ -1,9 +1,14 @@
 import time
 
-def myPrintLog(tag, *args):
+def myPrintLog(tag, *args,type="info"):
+    if type=="info":
+        color = "1;30;47"
+    elif type=="error":
+        color = "1;30;41"
+
     for i in args:
-        print("[{time}]    {tag}    {msg}".format(
-            time=time.strftime("%H:%M:%S"), msg=i, tag=tag.rjust(20)))
+        print("[{time}]  \033[{color}m{type}\033[0m{tag}    {msg}".format(
+            time=time.strftime("%H:%M:%S"), msg=i, tag=tag.rjust(20),color=color,type=type.upper()))
 
 
 def AES_Encryption(content, key):

@@ -7,6 +7,7 @@ import json
 import queue
 import importlib
 import threading
+import socket
 
 app = Flask(__name__)  # 在当前文件下创建应用
 
@@ -57,7 +58,9 @@ STATUS_CODE_DICT = {
 
 def printLog(log):
     if IS_DEBUG:
+        print('*****DEBUG*****')
         print(log)
+        print('-----DEBUG-----')
 
 
 @app.route('/test', methods=['GET', 'POST'])
@@ -68,18 +71,39 @@ def test():
     print('l. ')
     return l
 
+
+SOCKET_PORT = 60000
+
+
+def broadcast():
+    print('Start Receiving Broadcast on Port', SOCKET_PORT)
+    sk = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    # sk.settimeout(200000)
+    sk.bind(('0.0.0.0', SOCKET_PORT))
+    while True:
+        msg, addr = sk.recvfrom(1024)
+        print()
+        if msg == b'NUIX connect request':
+            print(
+                f'[{time.strftime("%H:%M:%S")}] from {addr[0]}:{addr[1]}, msg: {msg}')
+            sk.sendto('NUIX connect received'.encode('utf-8'), addr)
+
 # ==========Device=========
 
 
 @app.route('/device_pair_init', methods=['GET', 'POST'])
 def device_pair_init():
     sub_device_id = request.args.get('device_id')
-    pin_code = str(random.randint(DEVICE_PAIR_PIN_LOWER_BOUND,
-                   DEVICE_PAIR_PIN_UPPER_BOUND)).zfill(6)
-    init_random_int = str(random.randint(0, 99999999)).zfill(8)
+    # ======================================== MOCK
+    # pin_code = str(random.randint(DEVICE_PAIR_PIN_LOWER_BOUND,
+    #                DEVICE_PAIR_PIN_UPPER_BOUND)).zfill(6)
+    # init_random_int = str(random.randint(0, 99999999)).zfill(8)
+    pin_code = '123456'
+    init_random_int = '12345678'
+    # ======================================== MOCK
 
     encrypt_str = utils.AES_Encryption(
-        content=init_random_int, key=sub_device_id+pin_code)
+        content=init_random_int, key=pin_code)
 
     # # *****old*****
     # PAIRED_DEVICE_LIST[sub_device_id] = {
@@ -89,7 +113,7 @@ def device_pair_init():
     # }
     # # *****old*****
     database.sys_add_paired_device(
-        sub_device_id,sub_device_id, time.time(), init_random_int, False)
+        sub_device_id, sub_device_id, time.time(), init_random_int, False)
 
     ret = {'code': '', 'encrypt_str': encrypt_str}
 
@@ -101,7 +125,9 @@ def device_pair_init():
 @app.route('/device_pair_verify', methods=['GET', 'POST'])
 def device_pair_verify():
     sub_device_id = request.args.get('device_id')
-    init_random_int_get = request.args.get('init_random_int')
+    encrypt_str = request.args.get('encrypt_str')
+    # init_random_int_get = request.args.get('init_random_int')
+
     # *****old*****
     # init_random_int_save = PAIRED_DEVICE_LIST.get(
     #     sub_device_id, {'init_random_int' :STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']})['init_random_int']
@@ -113,20 +139,26 @@ def device_pair_verify():
     if init_random_int_save == STATUS_CODE_DICT['DEVICE_PAIR_LIST_FIND_NONE']:
         ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_ERROR']}
 
+        printLog('VERIFY')
         printLog(ret)
 
         return ret
 
-    elif init_random_int_save == init_random_int_get:
+    init_random_int_get = utils.AES_Decryption(
+        content=encrypt_str, key=init_random_int_save)
+
+    if init_random_int_save == init_random_int_get:
         ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_SUCCESS']}
         database.sys_verify_paired_device(sub_device_id)
 
+        printLog('VERIFY')
         printLog(ret)
 
         return ret
     else:
         ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_FAIL']}
 
+        printLog('VERIFY')
         printLog('=====DEBUG=====')
         printLog(get_from_database)
         printLog(init_random_int_get)
@@ -148,7 +180,7 @@ def device_get_paired():
 @app.route('/transfer_key_generate', methods=['GET', 'POST'])
 def transfer_key_generate():
     sub_device_id = request.args.get('device_id')
-    encrypt_str = request.args.get('encrypt_str')
+    # encrypt_str = request.args.get('encrypt_str')
 
     random_int = str(random.randint(DATA_TRANSFER_INT_LOWER_BOUND,
                      DATA_TRANSFER_INT_UPPER_BOUND)).zfill(8)
@@ -166,11 +198,12 @@ def transfer_key_generate():
         return {'code': STATUS_CODE_DICT['TRANSFER_KEY_GENERATE_ERROR']}
     else:
         encrypt_str = utils.AES_Encryption(
-            content=random_int, key=sub_device_id+init_random_int_save)
+            content=random_int, key=init_random_int_save)
+        expired_time = time.time()+TRANSFER_DATA_KEY_PERIOD
         database.sys_update_transfer_data_key(
-            sub_device_id, random_int, time.time()+TRANSFER_DATA_KEY_PERIOD)
+            device_id=sub_device_id, key=random_int, expired_time=expired_time)
 
-        return {'code': STATUS_CODE_DICT['TRANSFER_KEY_GENERATE_SUCCESS'], 'encrypt_str': encrypt_str}
+        return {'code': STATUS_CODE_DICT['TRANSFER_KEY_GENERATE_SUCCESS'], 'encrypt_str': encrypt_str, 'expired_time': str(expired_time)}
 
 
 @app.route('/transfer_data', methods=['GET', 'POST'])
@@ -181,9 +214,11 @@ def transfer_data():
     transfer_key = ''
     transfer_key_expired_time = ''
     current_time = time.time()
-    if len(get_key):
+
+    print("get_key = ", get_key)
+    if len(get_key) and get_key[0][0] != None:
         transfer_key = get_key[0][0]
-        transfer_key_expired_time = get_key[0][1]
+        transfer_key_expired_time = float(get_key[0][1])
 
         if current_time > transfer_key_expired_time:
             ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_FAIL']}
@@ -192,32 +227,45 @@ def transfer_data():
         ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_ERROR']}
         return ret
 
-    printLog(transfer_key, transfer_key_expired_time)
+    printLog(transfer_key + transfer_key_expired_time)
 
     decrypt_str = utils.AES_Decryption(encrypt_str, transfer_key)
-    data = json.loads(decrypt_str)
+    # ADS DEBUG!
+    # data = json.loads(decrypt_str)
+    data = decrypt_str
 
-    printLog(data)
+    printLog("In Transfer_Data data="+data)
 
-    res, exc = handleData(data)
-
-    if res:
+    if data == "NUIXTEST":
         ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_SUCCESS']}
     else:
-        ret = {
-            'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_FAIL'], 'log': str(exc)}
+        ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_FAIL']}
 
     return ret
 
+
+    # ADS DEBUG!
+    # res, exc = handleData(data)
+
+    # if res:
+    #     ret = {'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_SUCCESS']}
+    # else:
+    #     ret = {
+    #         'code': STATUS_CODE_DICT['DEVICE_PAIR_VERIFY_FAIL'], 'log': str(exc)}
+
+    # return ret
+
 sub_device_clipboard_list = ['haha']
 mutex = threading.Lock()
+
+
 @app.route('/get_data', methods=['GET', 'POST'])
 def get_data():
-    t = random.randint(0,10)
+    t = random.randint(0, 10)
     ret = ''
     global sub_device_clipboard_list
     mutex.acquire()
-    if t<5:
+    if t < 5:
         ret = "new_clip"+str(t)
         sub_device_clipboard_list.append(t)
     printLog(t)
@@ -308,7 +356,7 @@ def add_app():
 # ==========Sensor==========
 
 def handleClipboardChange(args):
-    while(True):
+    while (True):
         print("我是线程%s" % args)
         time.sleep(2)
 
@@ -324,6 +372,10 @@ for my_app in APP_LIST:
     for script in my_app['script_list']:
         module = importlib.import_module('app.{}'.format(script['name']))
         app.register_blueprint(module.app, url_prefix='/app'+script['prefix'])
+
+# =====Broadcast=====
+# thread_broadcast = threading.Thread(target=broadcast)
+# thread_broadcast.start()
 
 # =====Start Flask=====
 app.run(debug=IS_DEBUG, host='0.0.0.0', port=5000)  # 运行app

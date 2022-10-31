@@ -1,9 +1,10 @@
+from ctypes import util
 import threading
 import time
 import socketio
 from aiohttp import web
-from urllib import parse
 import socket
+import json
 
 import database
 import utils
@@ -25,6 +26,9 @@ STATUS_CODE_DICT = {
     "RECEIVE_DATA_KEY_EXPIRED": 3004,
     "RECEIVE_DATA_DEVICE_NOT_FOUND": 3005
 }
+
+did_sid_map = {}
+sid_did_map = {}
 
 
 def broadcast():
@@ -53,6 +57,13 @@ async def disconnect(sid, *arg):
 # async def pair(sid, *arg):
 #     myPrintLog('pair', sid, arg)
 #     return 'haha'
+
+def updateDeviceId(sid, device_id, data):
+    if str(data).upper() == "HELLO":
+        did_sid_map[device_id] = sid
+        sid_did_map[sid] = device_id
+        sio.enter_room(sid, device_id)
+
 
 async def devicePairInit(sid, *args):
     '''Pair device, generate init key and add info to database
@@ -141,7 +152,7 @@ async def dataTransferKeyGen(sid, *args):
         return STATUS_CODE_DICT["DATA_TRANSFER_KEY_GENERATE_DEVICE_NOT_FOUND"]
 
 
-async def receiveData(sid, *args):
+async def receiveRawData(sid, *args):
     '''
     Receive data from client device.
 
@@ -152,6 +163,7 @@ async def receiveData(sid, *args):
     '''
     device_id = args[0]
     encrypt_str = args[1]
+    data_type = args[2]
 
     get_from_database = database.sys_get_transfer_data_key(device_id)
 
@@ -169,7 +181,18 @@ async def receiveData(sid, *args):
         decrypt_str = utils.AES_Decryption(
             content=encrypt_str, key=transfer_key)
 
-        myPrintLog("receiveData", decrypt_str)
+        myPrintLog("receiveData", "data:" + decrypt_str + "type:" + data_type)
+
+        if data_type.upper() == "HELLO":
+            updateDeviceId(sid, device_id, decrypt_str)
+
+        elif data_type.upper() == "DEBUG":
+            myPrintLog("DEBUG")
+            await sendRawData(device_id, "HELLO FROM PC")
+
+        else:
+            myPrintLog("receiveData", decrypt_str)
+
         return STATUS_CODE_DICT["OK"]
 
     else:
@@ -177,9 +200,73 @@ async def receiveData(sid, *args):
         return STATUS_CODE_DICT["RECEIVE_DATA_DEVICE_NOT_FOUND"]
 
 
-async def test(sid, *args):
-    myPrintLog("pair", args)
-    return "OK"
+async def handleData(data_raw):
+    '''
+
+    data_json={
+        "from_device" = "device_id",
+        "from_ip" = "ip_address",
+        "from_app" = "app_id",
+        "time_stamp" = "time_stamp",
+
+        "to_app" = "app_id", # optional, empty means broadcast
+    }
+    '''
+    # try:
+    #     data_json = json.loads(data_raw)
+
+    # except json.decoder.JSONDecodeError:
+    #     myPrintLog("handleData", "JSONDecodeError", type='error')
+
+    # if data_raw == "NUIX SENDDATA TEST":
+    #     sendRawData()
+
+
+def isDataTransferKeyValid(device_id):
+    '''Check if key for data transfer of specific device is valid.
+
+    :param device_id: The device id of client device.
+
+    '''
+
+    get_from_database = database.sys_get_transfer_data_key(device_id)
+    transfer_key = get_from_database[0][0] if len(
+        get_from_database) else None
+
+    if transfer_key != None:
+        transfer_key_expired_time = float(get_from_database[0][1])
+        current_time = time.time()
+
+        if current_time > transfer_key_expired_time:
+            myPrintLog("isDataTransferKeyValid", "Key expired")
+            return False
+
+        else:
+            return True, transfer_key
+
+    else:
+        myPrintLog('isDataTransferKeyValid', 'device not found in db')
+        raise Exception("[isDataTransferKeyValid] Device not found in db!")
+        # return STATUS_CODE_DICT["DATA_TRANSFER_KEY_GENERATE_DEVICE_NOT_FOUND"]
+
+
+async def sendRawData(device_id, data):
+
+    try:
+
+        await sio.emit("update data transfer key", room=did_sid_map[device_id])
+    except Exception as e:
+        print(e)
+        return False
+
+    while True:
+        res, key = isDataTransferKeyValid(device_id)
+        if res:
+            encrypt_data = utils.AES_Encryption(data, key)
+            await sio.emit("receive data", encrypt_data, room=did_sid_map[device_id])
+            # ADS::Exception
+            return True
+        time.sleep(1)
 
 
 if __name__ == '__main__':
@@ -201,9 +288,9 @@ sio.on('connect', connect)
 sio.on('device pair init', devicePairInit)
 sio.on('device pair verify', devicePairVerify)
 sio.on('data transfer key', dataTransferKeyGen)
-sio.on('receive data', receiveData)
+sio.on('receive data', receiveRawData)
 
-sio.on('pair', test)
+# sio.on('pair', test)
 sio.attach(app)
 
 web.run_app(app, host='0.0.0.0', port=8000)
