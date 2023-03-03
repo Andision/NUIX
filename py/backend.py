@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask
 import time
 import random
 import database
