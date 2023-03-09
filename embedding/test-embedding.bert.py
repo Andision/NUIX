@@ -1,7 +1,30 @@
 from gensim.models import KeyedVectors
+from gensim.similarities import WmdSimilarity
+from transformers import BertTokenizer, BertModel
+from sklearn.metrics.pairwise import cosine_similarity
+
 import json
 
 SIMILARITY_THRESHOLD = 0.4
+
+tokenizerBERT = None
+modelBERT = None
+
+def GetEmbeddingFromBERT(text):
+
+    global tokenizerBERT,modelBERT
+
+    if tokenizerBERT == None:
+        tokenizerBERT = BertTokenizer.from_pretrained('bert-base-chinese')
+
+    if modelBERT == None:
+        modelBERT = BertModel.from_pretrained('bert-base-chinese')
+
+    input = tokenizerBERT.encode_plus(text, return_tensors='pt', add_special_tokens=True, max_length=32)
+    input_ids = input['input_ids']
+    attention_mask = input['attention_mask']
+    pooler_output = modelBERT(input_ids, attention_mask=attention_mask)[1]
+    return pooler_output
 
 
 def GetTopKeyInDict(d: dict, top: int = -1):
@@ -17,9 +40,23 @@ def GetTopKeyInDict(d: dict, top: int = -1):
     return {i[0]: i[1] for i in ret}
     # return [i[0] for i in ret]
 
+def CalSimilarityFromBERT(word1,word2):
 
-intendSamplesFile = "C:/Users/Andision/Downloads/embedding/intend.json"
-AppLabelsFile = "C:/Users/Andision/Downloads/embedding/label.json"
+    similarity = cosine_similarity(GetEmbeddingFromBERT(word1).detach().numpy(),GetEmbeddingFromBERT(word2).detach().numpy())
+    return similarity[0][0]
+
+def CalSimilarityFROMWord2Vector(word1,word2):
+    global word2Vector,word2VectorFile
+    if word2Vector == None:
+        word2Vector = KeyedVectors.load_word2vec_format(word2VectorFile, binary=False)
+    similarity = word2Vector.similarity(label, intend['文本输入'])
+    return similarity
+
+def CalSimilarity(word1,word2):
+    return CalSimilarityFromBERT(word1,word2)
+
+intendSamplesFile = "C:/Users/Andision/Documents/GitHub/NUIX/embedding/intend.json"
+AppLabelsFile = "C:/Users/Andision/Documents/GitHub/NUIX/embedding/label.json"
 
 print("Loading Json...")
 with open(intendSamplesFile, encoding='utf-8') as f:
@@ -32,12 +69,12 @@ countIntend = 0
 countSuccess = 0
 countTop1 = 0
 countTop5 = 0
-print("Loading Word2Vec...")
+
+# print("Loading Word2Vec...")
 word2VectorFile = 'C:/Users/Andision/Downloads/embedding/tencent-ailab-embedding-zh-d200-v0.2.0-s.txt'
 # word2VectorFile = 'C:/Users/Andision/Downloads/embedding/tencent-ailab-embedding-zh-d200-v0.2.0.txt'
-word2Vector = KeyedVectors.load_word2vec_format(
-    word2VectorFile, binary=False)
-print("Word2Vec loaded!")
+word2Vector = None
+# print("Word2Vec loaded!")
 
 print('\n')
 
@@ -55,8 +92,7 @@ for app, intendList in intendSamples.items():
                 maxSimlilarity = -1
                 for label in AppLabels[appInDict]:
                     try:
-                        similarity = word2Vector.similarity(
-                            label, intend['文本输入'])
+                        similarity = CalSimilarity(label, intend['文本输入'])
                         maxSimlilarity = max(maxSimlilarity, similarity)
                     except:
                         similarity = -1
