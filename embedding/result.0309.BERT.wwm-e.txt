@@ -1,0 +1,705 @@
+Loading Json...
+JSON loaded!
+
+
+高德地图 五道口地铁站
+Some weights of the model checkpoint at hfl/chinese-bert-wwm-ext were not used when initializing BertForMaskedLM: ['cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+SUCCESS:True, TOP5:True, TOP1:True
+{'高德地图': 0.9883336, '百度地图': 0.9883336, '携程': 0.98618335, '哔哩哔哩': 0.9857643, '滴滴出 行': 0.9848595}
+TOTAL:1, SUCCESS:1, ACC:1.00, TOP5:1, ACC:1.00, TOP1:1, ACC:1.00
+
+
+高德地图 五道口椒麻小馆
+SUCCESS:True, TOP5:True, TOP1:True
+{'高德地图': 0.9854434, '美团': 0.9836943, '大众点评': 0.9836943, '支付宝': 0.983678, '携程': 0.98346764}
+TOTAL:2, SUCCESS:2, ACC:1.00, TOP5:2, ACC:1.00, TOP1:2, ACC:1.00
+
+
+高德地图 奶茶
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.99097675, '携程': 0.99052566, '12306': 0.99052566, '美团': 0.98955584, '大众点评': 0.98955584}
+TOTAL:3, SUCCESS:3, ACC:1.00, TOP5:2, ACC:0.67, TOP1:2, ACC:0.67
+
+
+高德地图 双清公寓
+SUCCESS:True, TOP5:True, TOP1:False
+{'携程': 0.99027056, '高德地图': 0.990106, '12306': 0.9896295, '百度地图': 0.98854196, '滴滴出行': 0.98854196}
+TOTAL:4, SUCCESS:4, ACC:1.00, TOP5:3, ACC:0.75, TOP1:2, ACC:0.50
+
+
+高德地图 柏拉图咖啡馆
+SUCCESS:True, TOP5:False, TOP1:False
+{'豆瓣': 0.99315584, '微信读书': 0.99315584, '知乎': 0.99149966, '哔哩哔哩': 0.99149966, '网易有道词典': 0.99098694}
+TOTAL:5, SUCCESS:5, ACC:1.00, TOP5:3, ACC:0.60, TOP1:2, ACC:0.40
+
+
+高德地图 清华大学东北门
+SUCCESS:True, TOP5:False, TOP1:False
+{'知乎': 0.98798496, '美团': 0.9875832, '大众点评': 0.9875832, '豆瓣': 0.97605395, '腾讯视频': 0.97605395}
+TOTAL:6, SUCCESS:6, ACC:1.00, TOP5:3, ACC:0.50, TOP1:2, ACC:0.33
+
+
+高德地图 青悦城
+SUCCESS:True, TOP5:True, TOP1:True
+{'高德地图': 0.9888251, '携程': 0.9885783, '滴滴出行': 0.98774123, '12306': 0.98756886, '支付宝': 0.9872197}
+TOTAL:7, SUCCESS:7, ACC:1.00, TOP5:4, ACC:0.57, TOP1:3, ACC:0.43
+
+
+高德地图 西施故里
+SUCCESS:True, TOP5:True, TOP1:False
+{'网易有道词典': 0.9868572, '支付宝': 0.98259115, '起点读书': 0.98253715, '高德地图': 0.98236996, '美团': 0.9816332}
+TOTAL:8, SUCCESS:8, ACC:1.00, TOP5:5, ACC:0.62, TOP1:3, ACC:0.38
+
+
+高德地图 圆明园地铁站
+SUCCESS:True, TOP5:True, TOP1:True
+{'高德地图': 0.98838323, '百度地图': 0.98838323, '哔哩哔哩': 0.987459, '携程': 0.9865675, '12306': 0.9863393}
+TOTAL:9, SUCCESS:9, ACC:1.00, TOP5:6, ACC:0.67, TOP1:4, ACC:0.44
+
+
+微信 二姨
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.9893894, '网易有道词典': 0.9856682, '高德地图': 0.9836648, '滴滴出行': 0.9833071, '携程': 0.98235023}
+TOTAL:10, SUCCESS:10, ACC:1.00, TOP5:6, ACC:0.60, TOP1:4, ACC:0.40
+
+
+微信 行在清华
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.98543614, '高德地图': 0.98530805, '携程': 0.9840156, '12306': 0.9840156, '知乎': 0.98359096}
+TOTAL:11, SUCCESS:11, ACC:1.00, TOP5:6, ACC:0.55, TOP1:4, ACC:0.36
+
+
+微信 清华大学在线服务
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.9905267, '豆瓣': 0.9895429, '微信读书': 0.9895429, '美团': 0.98942435, '大众点评': 0.98942435}
+TOTAL:12, SUCCESS:12, ACC:1.00, TOP5:6, ACC:0.50, TOP1:4, ACC:0.33
+
+
+微信 食堂开伙时间
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.991641, '东方航空': 0.99153346, '12306': 0.99153346, '高德地图': 0.99146605, '百度地 图': 0.99146605}
+TOTAL:13, SUCCESS:13, ACC:1.00, TOP5:6, ACC:0.46, TOP1:4, ACC:0.31
+
+
+微信 清华专线
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.9910902, '12306': 0.9910902, '豆瓣': 0.9902004, '微信读书': 0.9902004, '知乎': 0.989782}
+TOTAL:14, SUCCESS:14, ACC:1.00, TOP5:6, ACC:0.43, TOP1:4, ACC:0.29
+
+
+微信 X老师
+SUCCESS:True, TOP5:True, TOP1:False
+{'饿了么': 0.99207765, '支付宝': 0.9901927, '微信': 0.9901036, '哔哩哔哩': 0.98876995, '起点读书': 0.98848444}
+TOTAL:15, SUCCESS:15, ACC:1.00, TOP5:7, ACC:0.47, TOP1:4, ACC:0.27
+
+
+微信 Friday
+SUCCESS:True, TOP5:False, TOP1:False
+{'keep': 0.99561936, '12306': 0.9851036, '哔哩哔哩': 0.9822764, '腾讯视频': 0.9750329, '爱奇艺': 0.9750329}
+TOTAL:16, SUCCESS:16, ACC:1.00, TOP5:7, ACC:0.44, TOP1:4, ACC:0.25
+
+
+微信 晚饭
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.9890963, '12306': 0.9890963, '美团': 0.98895234, '大众点评': 0.98895234, 'keep': 0.9884456}
+TOTAL:17, SUCCESS:17, ACC:1.00, TOP5:7, ACC:0.41, TOP1:4, ACC:0.24
+
+
+微信 小五爷园
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.9863911, '携程': 0.9863211, '12306': 0.9863211, '高德地图': 0.9856826, '东方航空': 0.9841091}
+TOTAL:18, SUCCESS:18, ACC:1.00, TOP5:7, ACC:0.39, TOP1:4, ACC:0.22
+
+
+微信 ttttt
+SUCCESS:True, TOP5:False, TOP1:False
+{'12306': 0.99100226, 'keep': 0.98959523, '哔哩哔哩': 0.98731506, '淘宝': 0.98462147, '京东': 0.98462147}
+TOTAL:19, SUCCESS:19, ACC:1.00, TOP5:7, ACC:0.37, TOP1:4, ACC:0.21
+
+
+微信 项目书.doc
+SUCCESS:True, TOP5:False, TOP1:False
+{'腾讯视频': 0.9879782, '爱奇艺': 0.9879782, '抖音': 0.9879782, '12306': 0.98561424, '豆瓣': 0.9850718}
+TOTAL:20, SUCCESS:20, ACC:1.00, TOP5:7, ACC:0.35, TOP1:4, ACC:0.20
+
+
+微信 明天在哪里
+SUCCESS:True, TOP5:True, TOP1:False
+{'饿了么': 0.99138993, '微信': 0.9876918, '支付宝': 0.98763907, '抖音': 0.98607147, '哔哩哔哩': 0.98607147}
+TOTAL:21, SUCCESS:21, ACC:1.00, TOP5:8, ACC:0.38, TOP1:4, ACC:0.19
+
+
+微信 生日快乐
+SUCCESS:True, TOP5:True, TOP1:False
+{'饿了么': 0.9891503, '微信': 0.98805976, '知乎': 0.9858661, '哔哩哔哩': 0.9858661, '抖音': 0.98560333}
+TOTAL:22, SUCCESS:22, ACC:1.00, TOP5:9, ACC:0.41, TOP1:4, ACC:0.18
+
+
+微信 周
+SUCCESS:True, TOP5:True, TOP1:False
+{'高德地图': 0.9933212, '支付宝': 0.99151856, '微信': 0.99045295, '东方航空': 0.9897769, '12306': 0.9897769}
+TOTAL:23, SUCCESS:23, ACC:1.00, TOP5:10, ACC:0.43, TOP1:4, ACC:0.17
+
+
+微信 陈
+SUCCESS:True, TOP5:True, TOP1:False
+{'高德地图': 0.9934109, '支付宝': 0.9921499, '携程': 0.9891549, '12306': 0.9891549, '微信': 0.9886676}
+TOTAL:24, SUCCESS:24, ACC:1.00, TOP5:11, ACC:0.46, TOP1:4, ACC:0.17
+
+
+爱奇艺 三体
+SUCCESS:True, TOP5:False, TOP1:False
+{'豆瓣': 0.99115825, '微信读书': 0.99115825, '新浪微博': 0.9909551, '起点读书': 0.99040014, '知乎': 0.99007183}
+TOTAL:25, SUCCESS:25, ACC:1.00, TOP5:11, ACC:0.44, TOP1:4, ACC:0.16
+
+
+新浪微博 ChatGPT
+SUCCESS:True, TOP5:False, TOP1:False
+{'keep': 0.99205726, '12306': 0.98598385, '哔哩哔哩': 0.9848527, '腾讯视频': 0.9823473, '爱奇艺': 0.9823473}
+TOTAL:26, SUCCESS:26, ACC:1.00, TOP5:11, ACC:0.42, TOP1:4, ACC:0.15
+
+
+新浪微博 张颂文
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.989515, '支付宝': 0.98770845, '网易有道词典': 0.9854372, '知乎': 0.9853978, '哔哩哔哩': 0.9853978}
+TOTAL:27, SUCCESS:27, ACC:1.00, TOP5:11, ACC:0.41, TOP1:4, ACC:0.15
+
+
+新浪微博 胡鑫宇
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.99028915, '支付宝': 0.9879124, '抖音': 0.982399, '哔哩哔哩': 0.982399, '腾讯视频': 0.9808779}
+TOTAL:28, SUCCESS:28, ACC:1.00, TOP5:11, ACC:0.39, TOP1:4, ACC:0.14
+
+
+新浪微博 柏浪涛
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.9910801, '支付宝': 0.9891182, '抖音': 0.982993, '哔哩哔哩': 0.982993, '网易有道词典': 0.98298126}
+TOTAL:29, SUCCESS:29, ACC:1.00, TOP5:11, ACC:0.38, TOP1:4, ACC:0.14
+
+
+美团 和府捞面
+SUCCESS:True, TOP5:True, TOP1:True
+{'美团': 0.9851043, '大众点评': 0.9851043, '携程': 0.98505753, '支付宝': 0.9847279, '滴滴出行': 0.98436505}
+TOTAL:30, SUCCESS:30, ACC:1.00, TOP5:12, ACC:0.40, TOP1:5, ACC:0.17
+
+
+美团 肯德基
+SUCCESS:True, TOP5:True, TOP1:False
+{'支付宝': 0.9913543, '饿了么': 0.991094, '微信': 0.9908284, '美团': 0.9903816, '哔哩哔哩': 0.99035573}
+TOTAL:31, SUCCESS:31, ACC:1.00, TOP5:13, ACC:0.42, TOP1:5, ACC:0.16
+
+
+美团 麦当劳
+SUCCESS:True, TOP5:False, TOP1:False
+{'饿了么': 0.990679, '微信': 0.98968434, '携程': 0.98881805, '12306': 0.98881805, '起点读书': 0.9884904}
+TOTAL:32, SUCCESS:32, ACC:1.00, TOP5:13, ACC:0.41, TOP1:5, ACC:0.16
+
+
+美团 麻辣烫
+SUCCESS:True, TOP5:True, TOP1:False
+{'携程': 0.9858872, '12306': 0.9858872, '支付宝': 0.98576266, '美团': 0.98558676, '大众点评': 0.98558676}
+TOTAL:33, SUCCESS:33, ACC:1.00, TOP5:14, ACC:0.42, TOP1:5, ACC:0.15
+
+
+美团 kfc
+SUCCESS:True, TOP5:False, TOP1:False
+{'12306': 0.987265, '哔哩哔哩': 0.9870721, 'keep': 0.98647845, '支付宝': 0.984585, '淘宝': 0.9843431}
+TOTAL:34, SUCCESS:34, ACC:1.00, TOP5:14, ACC:0.41, TOP1:5, ACC:0.15
+
+
+美团 米线
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.9913272, '12306': 0.9913272, '滴滴出行': 0.9895842, '高德地图': 0.98873925, '百度地图': 0.9886362}
+TOTAL:35, SUCCESS:35, ACC:1.00, TOP5:14, ACC:0.40, TOP1:5, ACC:0.14
+
+
+美团 煲仔饭
+SUCCESS:True, TOP5:True, TOP1:False
+{'携程': 0.9896194, '12306': 0.9896194, '支付宝': 0.9891472, '美团': 0.98907393, '大众点评': 0.98907393}
+TOTAL:36, SUCCESS:36, ACC:1.00, TOP5:15, ACC:0.42, TOP1:5, ACC:0.14
+
+
+美团 鸡公煲
+SUCCESS:True, TOP5:False, TOP1:False
+{'滴滴出行': 0.98844725, '携程': 0.9862853, '12306': 0.9862853, '支付宝': 0.9860894, '网易有道词典': 0.9850654}
+TOTAL:37, SUCCESS:37, ACC:1.00, TOP5:15, ACC:0.41, TOP1:5, ACC:0.14
+
+
+美团 炸鸡
+SUCCESS:True, TOP5:True, TOP1:False
+{'携程': 0.99139, '12306': 0.99139, '东方航空': 0.99126804, '美团': 0.99021447, '大众点评': 0.99021447}
+TOTAL:38, SUCCESS:38, ACC:1.00, TOP5:16, ACC:0.42, TOP1:5, ACC:0.13
+
+
+美团 奶茶
+SUCCESS:True, TOP5:True, TOP1:False
+{'支付宝': 0.99097675, '携程': 0.99052566, '12306': 0.99052566, '美团': 0.98955584, '大众点评': 0.98955584}
+TOTAL:39, SUCCESS:39, ACC:1.00, TOP5:17, ACC:0.44, TOP1:5, ACC:0.13
+
+
+美团 电影院
+SUCCESS:True, TOP5:True, TOP1:False
+{'携程': 0.99445415, '美团': 0.99295837, '大众点评': 0.99295837, '支付宝': 0.99285084, '12306': 0.9927021}
+TOTAL:40, SUCCESS:40, ACC:1.00, TOP5:18, ACC:0.45, TOP1:5, ACC:0.12
+
+
+美团 酒店
+SUCCESS:True, TOP5:True, TOP1:False
+{'携程': 1.0000002, '东方航空': 0.99342954, '12306': 0.99342954, '美团': 0.99293005, '大众点评': 0.99293005}
+TOTAL:41, SUCCESS:41, ACC:1.00, TOP5:19, ACC:0.46, TOP1:5, ACC:0.12
+
+
+12306 北京 天津
+SUCCESS:True, TOP5:False, TOP1:False
+{'抖音': 0.9876427, '哔哩哔哩': 0.9876427, '美团': 0.987273, '大众点评': 0.987273, '高德地图': 0.98724174}
+TOTAL:42, SUCCESS:42, ACC:1.00, TOP5:19, ACC:0.45, TOP1:5, ACC:0.12
+
+
+12306 北京
+SUCCESS:True, TOP5:False, TOP1:False
+{'知乎': 0.989854, '哔哩哔哩': 0.989854, '携程': 0.9892875, '支付宝': 0.988835, '高德地图': 0.98881793}
+TOTAL:43, SUCCESS:43, ACC:1.00, TOP5:19, ACC:0.44, TOP1:5, ACC:0.12
+
+
+12306 上海
+SUCCESS:True, TOP5:True, TOP1:False
+{'美团': 0.9928191, '大众点评': 0.9928191, '知乎': 0.9927225, '东方航空': 0.98697627, '12306': 0.98697627}
+TOTAL:44, SUCCESS:44, ACC:1.00, TOP5:20, ACC:0.45, TOP1:5, ACC:0.11
+
+
+知乎 颈椎病治疗
+SUCCESS:True, TOP5:True, TOP1:False
+{'豆瓣': 0.99024427, '微信读书': 0.99024427, '知乎': 0.99000394, '哔哩哔哩': 0.99000394, '支付宝': 0.9891303}
+TOTAL:45, SUCCESS:45, ACC:1.00, TOP5:21, ACC:0.47, TOP1:5, ACC:0.11
+
+
+知乎 股票发行注册制
+SUCCESS:True, TOP5:True, TOP1:False
+{'美团': 0.9829658, '大众点评': 0.9829658, '知乎': 0.9827484, '支付宝': 0.98204684, '新浪微博': 0.9815977}
+TOTAL:46, SUCCESS:46, ACC:1.00, TOP5:22, ACC:0.48, TOP1:5, ACC:0.11
+
+
+知乎 幻方量化
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.9900271, '网易有道词典': 0.9892765, '高德地图': 0.98880726, '百度地图': 0.98880726, '微信': 0.9883957}
+TOTAL:47, SUCCESS:47, ACC:1.00, TOP5:22, ACC:0.47, TOP1:5, ACC:0.11
+
+
+知乎 清华大学新雅书院
+SUCCESS:True, TOP5:True, TOP1:False
+{'高德地图': 0.98909175, '豆瓣': 0.9890007, '微信读书': 0.9890007, '知乎': 0.9889087, '哔哩哔哩': 0.9889087}
+TOTAL:48, SUCCESS:48, ACC:1.00, TOP5:23, ACC:0.48, TOP1:5, ACC:0.10
+
+
+知乎 国家电网
+SUCCESS:True, TOP5:True, TOP1:False
+{'支付宝': 0.9843799, '高德地图': 0.98368883, '百度地图': 0.98368883, '知乎': 0.9823793, '携程': 0.9820601}
+TOTAL:49, SUCCESS:49, ACC:1.00, TOP5:24, ACC:0.49, TOP1:5, ACC:0.10
+
+
+知乎 chatGPT
+SUCCESS:True, TOP5:False, TOP1:False
+{'keep': 0.99205726, '12306': 0.98598385, '哔哩哔哩': 0.9848527, '腾讯视频': 0.9823473, '爱奇艺': 0.9823473}
+TOTAL:50, SUCCESS:50, ACC:1.00, TOP5:24, ACC:0.48, TOP1:5, ACC:0.10
+
+
+知乎 公务员考试
+SUCCESS:True, TOP5:True, TOP1:True
+{'知乎': 0.9898793, '美团': 0.98560536, '大众点评': 0.98560536, '豆瓣': 0.98554194, '微信读书': 0.98554194}
+TOTAL:51, SUCCESS:51, ACC:1.00, TOP5:25, ACC:0.49, TOP1:6, ACC:0.12
+
+
+哔哩哔哩 b站年度报告
+SUCCESS:True, TOP5:True, TOP1:True
+{'哔哩哔哩': 0.99079156, '知乎': 0.98865473, '百度': 0.98865473, '抖音': 0.98813367, '淘宝': 0.98742235}
+TOTAL:52, SUCCESS:52, ACC:1.00, TOP5:26, ACC:0.50, TOP1:7, ACC:0.13
+
+
+哔哩哔哩 csgo
+SUCCESS:True, TOP5:True, TOP1:False
+{'keep': 0.9876899, '12306': 0.9874102, '哔哩哔哩': 0.9869401, '豆瓣': 0.98032874, '腾讯视频': 0.9802916}
+TOTAL:53, SUCCESS:53, ACC:1.00, TOP5:27, ACC:0.51, TOP1:7, ACC:0.13
+
+
+哔哩哔哩 战地2042
+SUCCESS:True, TOP5:True, TOP1:False
+{'腾讯视频': 0.98374754, '爱奇艺': 0.98374754, '抖音': 0.98374754, '哔哩哔哩': 0.98310083, '豆瓣': 0.9817388}
+TOTAL:54, SUCCESS:54, ACC:1.00, TOP5:28, ACC:0.52, TOP1:7, ACC:0.13
+
+
+哔哩哔哩 俄乌冲突
+SUCCESS:True, TOP5:True, TOP1:False
+{'知乎': 0.99057615, '哔哩哔哩': 0.99057615, '携程': 0.99020016, '东方航空': 0.99020016, '12306': 0.98999083}
+TOTAL:55, SUCCESS:55, ACC:1.00, TOP5:29, ACC:0.53, TOP1:7, ACC:0.13
+
+
+哔哩哔哩 美食作家王刚
+SUCCESS:True, TOP5:True, TOP1:False
+{'高德地图': 0.98887646, '知乎': 0.98693645, '哔哩哔哩': 0.98693645, '美团': 0.9867162, '大众点评': 0.9867162}
+TOTAL:56, SUCCESS:56, ACC:1.00, TOP5:30, ACC:0.54, TOP1:7, ACC:0.12
+
+
+哔哩哔哩 麻将规则
+SUCCESS:True, TOP5:True, TOP1:False
+{'知乎': 0.9918172, '哔哩哔哩': 0.9918172, 'keep': 0.99177486, '携程': 0.9912535, '东方航空': 0.9912535}
+TOTAL:57, SUCCESS:57, ACC:1.00, TOP5:31, ACC:0.54, TOP1:7, ACC:0.12
+
+
+哔哩哔哩 大连小王爱踢球
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.9892355, '饿了么': 0.98841435, '携程': 0.98726016, '12306': 0.98726016, '东方航空': 0.9863099}
+TOTAL:58, SUCCESS:58, ACC:1.00, TOP5:31, ACC:0.53, TOP1:7, ACC:0.12
+
+
+哔哩哔哩 中国奇谭
+SUCCESS:True, TOP5:False, TOP1:False
+{'新浪微博': 0.9918544, '起点读书': 0.99092627, '豆瓣': 0.989295, '微信读书': 0.989295, '腾讯视频': 0.98927945}
+TOTAL:59, SUCCESS:59, ACC:1.00, TOP5:31, ACC:0.53, TOP1:7, ACC:0.12
+
+
+哔哩哔哩 饲养员小谢
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.9868996, '12306': 0.9868996, '东方航空': 0.98679256, '支付宝': 0.98622215, '新浪微博': 0.9853412}
+TOTAL:60, SUCCESS:60, ACC:1.00, TOP5:31, ACC:0.52, TOP1:7, ACC:0.12
+
+
+哔哩哔哩 土耳其
+SUCCESS:True, TOP5:True, TOP1:False
+{'抖音': 0.97998434, '哔哩哔哩': 0.97998434, '微信': 0.9781778, '支付宝': 0.977859, '携程': 0.9767624}
+TOTAL:61, SUCCESS:61, ACC:1.00, TOP5:32, ACC:0.52, TOP1:7, ACC:0.11
+
+
+哔哩哔哩 月亮要早睡
+SUCCESS:True, TOP5:False, TOP1:False
+{'饿了么': 0.9864817, '支付宝': 0.9856616, '滴滴出行': 0.98542583, '携程': 0.9853111, '12306': 0.9853111}
+TOTAL:62, SUCCESS:62, ACC:1.00, TOP5:32, ACC:0.52, TOP1:7, ACC:0.11
+
+
+哔哩哔哩 九转大肠
+SUCCESS:True, TOP5:False, TOP1:False
+{'滴滴出行': 0.9885391, '携程': 0.9859735, '12306': 0.9859735, '东方航空': 0.9851635, '支付宝': 0.9836389}
+TOTAL:63, SUCCESS:63, ACC:1.00, TOP5:32, ACC:0.51, TOP1:7, ACC:0.11
+
+
+哔哩哔哩 郑钦文
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.9906409, '支付宝': 0.98664784, '豆瓣': 0.986045, '微信读书': 0.986045, '知乎': 0.9856081}
+TOTAL:64, SUCCESS:64, ACC:1.00, TOP5:32, ACC:0.50, TOP1:7, ACC:0.11
+
+
+哔哩哔哩 流浪地球2片尾
+SUCCESS:True, TOP5:True, TOP1:True
+{'哔哩哔哩': 0.99130195, '腾讯视频': 0.9899807, '爱奇艺': 0.9899807, '抖音': 0.9886731, '豆瓣': 0.9883164}
+TOTAL:65, SUCCESS:65, ACC:1.00, TOP5:33, ACC:0.51, TOP1:8, ACC:0.12
+
+
+哔哩哔哩 焦裕禄
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.9909162, '支付宝': 0.9905831, '携程': 0.9872472, '12306': 0.9872472, '网易有道词典': 0.987105}
+TOTAL:66, SUCCESS:66, ACC:1.00, TOP5:33, ACC:0.50, TOP1:8, ACC:0.12
+
+
+哔哩哔哩 土耳其地震
+SUCCESS:True, TOP5:True, TOP1:False
+{'携程': 0.98417205, '东方航空': 0.98417205, '12306': 0.9838448, '抖音': 0.98329675, '哔哩哔哩': 0.98329675}
+TOTAL:67, SUCCESS:67, ACC:1.00, TOP5:34, ACC:0.51, TOP1:8, ACC:0.12
+
+
+哔哩哔哩 刘培茄
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.99264127, '支付宝': 0.9901851, '携程': 0.9859997, '12306': 0.9859997, '知乎': 0.9859132}
+TOTAL:68, SUCCESS:68, ACC:1.00, TOP5:34, ACC:0.50, TOP1:8, ACC:0.12
+
+
+哔哩哔哩 fgo
+SUCCESS:True, TOP5:True, TOP1:True
+{'哔哩哔哩': 0.99200296, 'keep': 0.99048173, '12306': 0.98903704, '淘宝': 0.98574054, '京东': 0.98574054}
+TOTAL:69, SUCCESS:69, ACC:1.00, TOP5:35, ACC:0.51, TOP1:9, ACC:0.13
+
+
+QQ音乐 qq音乐年度报告
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.97924685, '新浪微博': 0.979193, '知乎': 0.97904056, '百度': 0.97904056, '腾讯视频': 0.9789298}
+TOTAL:70, SUCCESS:70, ACC:1.00, TOP5:35, ACC:0.50, TOP1:9, ACC:0.13
+
+
+QQ音乐 搁浅
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.98808306, '东方航空': 0.98808306, '12306': 0.98701996, '新浪微博': 0.9861879, '今日头条': 0.9861879}
+TOTAL:71, SUCCESS:71, ACC:1.00, TOP5:35, ACC:0.49, TOP1:9, ACC:0.13
+
+
+QQ音乐 林俊杰
+SUCCESS:True, TOP5:True, TOP1:False
+{'支付宝': 0.98618495, '饿了么': 0.9851293, '微信': 0.9843085, '网易云音乐': 0.98398453, 'QQ音乐': 0.98398453}
+TOTAL:72, SUCCESS:72, ACC:1.00, TOP5:36, ACC:0.50, TOP1:9, ACC:0.12
+
+
+QQ音乐 陶喆
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.98808485, '高德地图': 0.98557436, '饿了么': 0.9848614, '微信': 0.9843693, '抖音': 0.9842414}
+TOTAL:73, SUCCESS:73, ACC:1.00, TOP5:36, ACC:0.49, TOP1:9, ACC:0.12
+
+
+QQ音乐 丁世光
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.99294555, '支付宝': 0.99006385, '网易有道词典': 0.9854524, '微信': 0.98521537, '美 团': 0.98387307}
+TOTAL:74, SUCCESS:74, ACC:1.00, TOP5:36, ACC:0.49, TOP1:9, ACC:0.12
+
+
+网易云音乐 网易云年度报告
+SUCCESS:True, TOP5:True, TOP1:False
+{'知乎': 0.98651636, '百度': 0.98651636, '微信读书': 0.98642063, '网易云音乐': 0.98636127, '支付宝': 0.98597085}
+TOTAL:75, SUCCESS:75, ACC:1.00, TOP5:37, ACC:0.49, TOP1:9, ACC:0.12
+
+
+网易云音乐 只因你太美
+SUCCESS:True, TOP5:False, TOP1:False
+{'饿了么': 0.9813894, '支付宝': 0.97964466, '滴滴出行': 0.97899026, '微信': 0.9774693, '抖音': 0.9768783}
+TOTAL:76, SUCCESS:76, ACC:1.00, TOP5:37, ACC:0.49, TOP1:9, ACC:0.12
+
+
+网易云音乐 我不曾忘记
+SUCCESS:True, TOP5:False, TOP1:False
+{'美团': 0.99210674, '大众点评': 0.99210674, '知乎': 0.9920755, '豆瓣': 0.98313266, '微信读书': 0.98313266}
+TOTAL:77, SUCCESS:77, ACC:1.00, TOP5:37, ACC:0.48, TOP1:9, ACC:0.12
+
+
+网易云音乐 赵雷
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.99157083, '支付宝': 0.98961616, '携程': 0.9846354, '12306': 0.9846354, '抖音': 0.9837909}
+TOTAL:78, SUCCESS:78, ACC:1.00, TOP5:37, ACC:0.47, TOP1:9, ACC:0.12
+
+
+网易云音乐 深海
+SUCCESS:True, TOP5:False, TOP1:False
+{'微信': 0.9902551, '携程': 0.98986155, '东方航空': 0.98986155, '12306': 0.98947173, '支付宝': 0.9894407}
+TOTAL:79, SUCCESS:79, ACC:1.00, TOP5:37, ACC:0.47, TOP1:9, ACC:0.11
+
+
+京东 小米蓝牙耳机
+SUCCESS:True, TOP5:False, TOP1:False
+{'腾讯视频': 0.9809714, '爱奇艺': 0.9809714, '抖音': 0.9809714, '百度': 0.9808287, '淘宝': 0.98028463}
+TOTAL:80, SUCCESS:80, ACC:1.00, TOP5:37, ACC:0.46, TOP1:9, ACC:0.11
+
+
+京东 颈椎枕
+SUCCESS:True, TOP5:False, TOP1:False
+{'keep': 0.9833731, '百度': 0.9826864, '携程': 0.9824244, '东方航空': 0.9824244, '12306': 0.982128}
+TOTAL:81, SUCCESS:81, ACC:1.00, TOP5:37, ACC:0.46, TOP1:9, ACC:0.11
+
+
+京东 机械硬盘
+SUCCESS:True, TOP5:True, TOP1:False
+{'百度': 0.98773867, '淘宝': 0.98301744, '京东': 0.98301744, '抖音': 0.9827037, '美团': 0.98270255}
+TOTAL:82, SUCCESS:82, ACC:1.00, TOP5:38, ACC:0.46, TOP1:9, ACC:0.11
+
+
+今日头条 chatgpt
+SUCCESS:True, TOP5:False, TOP1:False
+{'keep': 0.99205726, '12306': 0.98598385, '哔哩哔哩': 0.9848527, '腾讯视频': 0.9823473, '爱奇艺': 0.9823473}
+TOTAL:83, SUCCESS:83, ACC:1.00, TOP5:38, ACC:0.46, TOP1:9, ACC:0.11
+
+
+豆瓣 满江红
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.98329616, '网易有道词典': 0.9820221, '滴滴出行': 0.9808934, '携程': 0.9798568, '12306': 0.9798568}
+TOTAL:84, SUCCESS:84, ACC:1.00, TOP5:38, ACC:0.45, TOP1:9, ACC:0.11
+
+
+豆瓣 无名
+SUCCESS:True, TOP5:False, TOP1:False
+{'网易有道词典': 0.99193865, '携程': 0.9917764, '12306': 0.9917764, '支付宝': 0.99127525, '高德地 图': 0.99114144}
+TOTAL:85, SUCCESS:85, ACC:1.00, TOP5:38, ACC:0.45, TOP1:9, ACC:0.11
+
+
+豆瓣 流浪地球2
+SUCCESS:True, TOP5:True, TOP1:False
+{'哔哩哔哩': 0.98379076, '饿了么': 0.98361737, '豆瓣': 0.9829055, '腾讯视频': 0.9829055, '爱奇艺': 0.9829055}
+TOTAL:86, SUCCESS:86, ACC:1.00, TOP5:39, ACC:0.45, TOP1:9, ACC:0.10
+
+
+豆瓣 阿凡达
+SUCCESS:True, TOP5:True, TOP1:False
+{'饿了么': 0.9896337, '豆瓣': 0.989137, '腾讯视频': 0.989137, '爱奇艺': 0.989137, '新浪微博': 0.98873997}
+TOTAL:87, SUCCESS:87, ACC:1.00, TOP5:40, ACC:0.46, TOP1:9, ACC:0.10
+
+
+腾讯视频 三体
+SUCCESS:True, TOP5:False, TOP1:False
+{'豆瓣': 0.99115825, '微信读书': 0.99115825, '新浪微博': 0.9909551, '起点读书': 0.99040014, '知乎': 0.99007183}
+TOTAL:88, SUCCESS:88, ACC:1.00, TOP5:40, ACC:0.45, TOP1:9, ACC:0.10
+
+
+东方航空 昆明-北京
+SUCCESS:True, TOP5:True, TOP1:False
+{'起点读书': 0.9813465, '携程': 0.9792419, '东方航空': 0.9792419, '高德地图': 0.97890615, '百度地 图': 0.97890615}
+TOTAL:89, SUCCESS:89, ACC:1.00, TOP5:41, ACC:0.46, TOP1:9, ACC:0.10
+
+
+大众点评 海淀川菜
+SUCCESS:True, TOP5:True, TOP1:False
+{'美团': 0.9892471, '大众点评': 0.9892471, '携程': 0.9874305, '12306': 0.98694944, '高德地图': 0.9865905}
+TOTAL:90, SUCCESS:90, ACC:1.00, TOP5:42, ACC:0.47, TOP1:9, ACC:0.10
+
+
+大众点评 德扑
+SUCCESS:True, TOP5:False, TOP1:False
+{'网易有道词典': 0.98851097, '支付宝': 0.9884028, '高德地图': 0.9880965, '携程': 0.9843073, '东方 航空': 0.9843073}
+TOTAL:91, SUCCESS:91, ACC:1.00, TOP5:42, ACC:0.46, TOP1:9, ACC:0.10
+
+
+大众点评 酸菜鱼
+SUCCESS:True, TOP5:False, TOP1:False
+{'滴滴出行': 0.98928845, '网易有道词典': 0.9833469, '携程': 0.98293114, '12306': 0.98293114, '支付宝': 0.98262084}
+TOTAL:92, SUCCESS:92, ACC:1.00, TOP5:42, ACC:0.46, TOP1:9, ACC:0.10
+
+
+淘宝 每日坚果
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.97881585, 'keep': 0.9786163, '美团': 0.9778539, '大众点评': 0.9778539, '微信': 0.97741574}
+TOTAL:93, SUCCESS:93, ACC:1.00, TOP5:42, ACC:0.45, TOP1:9, ACC:0.10
+
+
+淘宝 磁吸手机壳
+SUCCESS:True, TOP5:True, TOP1:False
+{'滴滴出行': 0.9784661, '百度': 0.9779434, '抖音': 0.9768731, '新浪微博': 0.97678006, '淘宝': 0.97661656}
+TOTAL:94, SUCCESS:94, ACC:1.00, TOP5:43, ACC:0.46, TOP1:9, ACC:0.10
+
+
+淘宝 羽绒服
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.98857474, '东方航空': 0.98857474, '12306': 0.9876362, '饿了么': 0.98684126, '支付宝': 0.9866958}
+TOTAL:95, SUCCESS:95, ACC:1.00, TOP5:43, ACC:0.45, TOP1:9, ACC:0.09
+
+
+淘宝 行李箱20寸
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.9855558, '东方航空': 0.9855558, '抖音': 0.9844273, '高德地图': 0.9839625, '百度地图': 0.9839625}
+TOTAL:96, SUCCESS:96, ACC:1.00, TOP5:43, ACC:0.45, TOP1:9, ACC:0.09
+
+
+淘宝 Salomon
+SUCCESS:True, TOP5:False, TOP1:False
+{'keep': 0.99425834, '12306': 0.9864903, '哔哩哔哩': 0.9856311, '腾讯视频': 0.98074067, '爱奇艺': 0.98074067}
+TOTAL:97, SUCCESS:97, ACC:1.00, TOP5:43, ACC:0.44, TOP1:9, ACC:0.09
+
+
+淘宝 情人节礼物
+SUCCESS:True, TOP5:False, TOP1:False
+{'美团': 0.9904169, '大众点评': 0.9904169, '知乎': 0.9882353, '哔哩哔哩': 0.97989523, '豆瓣': 0.97953784}
+TOTAL:98, SUCCESS:98, ACC:1.00, TOP5:43, ACC:0.44, TOP1:9, ACC:0.09
+
+
+淘宝 行李箱
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.99070656, '东方航空': 0.989233, '抖音': 0.98890114, '12306': 0.98846614, '美团': 0.9880715}
+TOTAL:99, SUCCESS:99, ACC:1.00, TOP5:43, ACC:0.43, TOP1:9, ACC:0.09
+
+
+淘宝 键盘
+SUCCESS:True, TOP5:False, TOP1:False
+{'百度': 0.9909657, '携程': 0.98840296, '东方航空': 0.98840296, '高德地图': 0.98718077, '百度地图': 0.98718077}
+TOTAL:100, SUCCESS:100, ACC:1.00, TOP5:43, ACC:0.43, TOP1:9, ACC:0.09
+
+
+支付宝 地铁
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.9999995, '百度地图': 0.9999995, '滴滴出行': 0.9896202, '携程': 0.98877966, '12306': 0.98798996}
+TOTAL:101, SUCCESS:101, ACC:1.00, TOP5:43, ACC:0.43, TOP1:9, ACC:0.09
+
+
+携程 北京
+SUCCESS:True, TOP5:True, TOP1:False
+{'知乎': 0.989854, '哔哩哔哩': 0.989854, '携程': 0.9892875, '支付宝': 0.988835, '高德地图': 0.98881793}
+TOTAL:102, SUCCESS:102, ACC:1.00, TOP5:44, ACC:0.43, TOP1:9, ACC:0.09
+
+
+携程 酒店
+SUCCESS:True, TOP5:True, TOP1:True
+{'携程': 1.0000002, '东方航空': 0.99342954, '12306': 0.99342954, '美团': 0.99293005, '大众点评': 0.99293005}
+TOTAL:103, SUCCESS:103, ACC:1.00, TOP5:45, ACC:0.44, TOP1:10, ACC:0.10
+
+
+携程 宁波
+SUCCESS:True, TOP5:False, TOP1:False
+{'高德地图': 0.985853, '百度地图': 0.985853, '滴滴出行': 0.985853, '东方航空': 0.985853, '12306': 0.985853}
+TOTAL:104, SUCCESS:104, ACC:1.00, TOP5:45, ACC:0.43, TOP1:10, ACC:0.10
+
+
+keep 上肢力量
+SUCCESS:True, TOP5:False, TOP1:False
+{'美团': 0.98620796, '大众点评': 0.98620796, '知乎': 0.9857601, '微信': 0.9802184, '支付宝': 0.97935206}
+TOTAL:105, SUCCESS:105, ACC:1.00, TOP5:45, ACC:0.43, TOP1:10, ACC:0.10
+
+
+百度地图 上海15号线-永德路地铁站
+SUCCESS:True, TOP5:True, TOP1:False
+{'高德地图': 0.9857291, '百度地图': 0.9857291, '起点读书': 0.98387825, '携程': 0.98386586, '哔哩哔哩': 0.9837614}
+TOTAL:106, SUCCESS:106, ACC:1.00, TOP5:46, ACC:0.43, TOP1:10, ACC:0.09
+
+
+百度地图 虹桥地铁站
+SUCCESS:True, TOP5:True, TOP1:False
+{'高德地图': 0.9888122, '百度地图': 0.9888122, '携程': 0.98595744, '哔哩哔哩': 0.98503476, '滴滴出行': 0.98449373}
+TOTAL:107, SUCCESS:107, ACC:1.00, TOP5:47, ACC:0.44, TOP1:10, ACC:0.09
+
+
+网易有道词典 hypophrenia
+SUCCESS:True, TOP5:False, TOP1:False
+{'keep': 0.9881544, '哔哩哔哩': 0.9838743, '12306': 0.9810843, '腾讯视频': 0.9800026, '爱奇艺': 0.9800026}
+TOTAL:108, SUCCESS:108, ACC:1.00, TOP5:47, ACC:0.44, TOP1:10, ACC:0.09
+
+
+饿了么 小龙虾
+SUCCESS:True, TOP5:True, TOP1:False
+{'滴滴出行': 0.9909373, '支付宝': 0.990028, '携程': 0.98947024, '12306': 0.98947024, '饿了么': 0.9886113}
+TOTAL:109, SUCCESS:109, ACC:1.00, TOP5:48, ACC:0.44, TOP1:10, ACC:0.09
+
+
+饿了么 米粉
+SUCCESS:True, TOP5:False, TOP1:False
+{'滴滴出行': 0.9909026, '携程': 0.9884506, '12306': 0.9884506, '美团': 0.98795533, '大众点评': 0.98795533}
+TOTAL:110, SUCCESS:110, ACC:1.00, TOP5:48, ACC:0.44, TOP1:10, ACC:0.09
+
+
+微信读书 三体
+SUCCESS:True, TOP5:True, TOP1:False
+{'豆瓣': 0.99115825, '微信读书': 0.99115825, '新浪微博': 0.9909551, '起点读书': 0.99040014, '知乎': 0.99007183}
+TOTAL:111, SUCCESS:111, ACC:1.00, TOP5:49, ACC:0.44, TOP1:10, ACC:0.09
+
+
+滴滴出行 上海交通大学闵行校区
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.9821875, '高德地图': 0.98083043, '百度地图': 0.98083043, '起点读书': 0.9801451, '哔哩哔哩': 0.9789215}
+TOTAL:112, SUCCESS:112, ACC:1.00, TOP5:49, ACC:0.44, TOP1:10, ACC:0.09
+
+
+抖音 三三制战术
+SUCCESS:True, TOP5:False, TOP1:False
+{'携程': 0.989676, '东方航空': 0.989676, '12306': 0.9884181, '网易有道词典': 0.9881698, '新浪微博': 0.9880842}
+TOTAL:113, SUCCESS:113, ACC:1.00, TOP5:49, ACC:0.43, TOP1:10, ACC:0.09
+
+
+抖音 背部训练计划
+
+
+抖音 布莱恩洛佩兹
+SUCCESS:True, TOP5:False, TOP1:False
+{'支付宝': 0.9855914, '知乎': 0.9855113, '哔哩哔哩': 0.9855113, '携程': 0.98504746, '东方航空': 0.98504746}
+TOTAL:115, SUCCESS:115, ACC:1.00, TOP5:50, ACC:0.43, TOP1:11, ACC:0.10
+
+
+起点读书 诡秘之主
+SUCCESS:True, TOP5:True, TOP1:False
+{'新浪微博': 0.988981, '起点读书': 0.9835327, '携程': 0.98313916, '东方航空': 0.98313916, '豆瓣': 0.9824918}
+TOTAL:116, SUCCESS:116, ACC:1.00, TOP5:51, ACC:0.44, TOP1:11, ACC:0.09
+
+
+百度 python list copy
+SUCCESS:True, TOP5:False, TOP1:False
+{'keep': 0.9897783, '12306': 0.98719245, '哔哩哔哩': 0.9816856, '淘宝': 0.9750656, '京东': 0.9750656}
+TOTAL:117, SUCCESS:117, ACC:1.00, TOP5:51, ACC:0.44, TOP1:11, ACC:0.09
