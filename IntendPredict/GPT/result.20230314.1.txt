@@ -1,0 +1,599 @@
+高德地图 五道口地铁站
+TOP5:True, TOP1:False
+['百度地图', '高德地图', 'ios地图', '滴滴出行', '携程旅行']
+TOTAL:1, TOP5:1, ACC:1.00, TOP1:0, ACC:0.00
+
+高德地图 五道口椒麻小馆
+TOP5:False, TOP1:False
+['美团', '百度', '携程', '大众点评', '饿了么']
+TOTAL:2, TOP5:1, ACC:0.50, TOP1:0, ACC:0.00
+
+高德地图 奶茶
+TOP5:False, TOP1:False
+['美团', '饿了么', '滴滴出行', '百度地图', '大众点评']
+TOTAL:3, TOP5:1, ACC:0.33, TOP1:0, ACC:0.00
+
+高德地图 双清公寓
+TOP5:False, TOP1:False
+['知乎', '豆瓣阅读', '小红书', '起点读书', '微信读书']
+TOTAL:4, TOP5:1, ACC:0.25, TOP1:0, ACC:0.00
+
+高德地图 柏拉图咖啡馆
+TOP5:False, TOP1:False
+['没有相关应用程序。']
+TOTAL:5, TOP5:1, ACC:0.20, TOP1:0, ACC:0.00
+
+高德地图 清华大学东北门
+TOP5:True, TOP1:True
+['高德地图', '百度地图', '携程旅行', '滴滴出行', '百度']
+TOTAL:6, TOP5:2, ACC:0.33, TOP1:1, ACC:0.17
+
+高德地图 青悦城
+TOP5:False, TOP1:False
+['携程旅行', '大众点评', '美团', '百度地图', '淘宝']
+TOTAL:7, TOP5:2, ACC:0.29, TOP1:1, ACC:0.14
+
+高德地图 西施故里
+TOP5:True, TOP1:False
+['携程旅行', '大众点评', '高德地图', '滴滴出行', '百度地图']
+TOTAL:8, TOP5:3, ACC:0.38, TOP1:1, ACC:0.12
+
+高德地图 圆明园地铁站
+TOP5:True, TOP1:True
+['高德地图', '百度地图', '滴滴出行', 'ios地图', '携程旅行']
+TOTAL:9, TOP5:4, ACC:0.44, TOP1:2, ACC:0.22
+
+微信 二姨
+TOP5:True, TOP1:True
+['微信', 'QQ音乐', '新浪微博', '抖音', '今日头条']
+TOTAL:10, TOP5:5, ACC:0.50, TOP1:3, ACC:0.30
+
+微信 行在清华
+TOP5:False, TOP1:False
+['携程旅行', '滴滴出行', '高德地图', 'ios地图', '百度地图']
+TOTAL:11, TOP5:5, ACC:0.45, TOP1:3, ACC:0.27
+
+微信 清华大学在线服务
+TOP5:False, TOP1:False
+['百度', '知乎', '携程', '美团', '起点读书']
+TOTAL:12, TOP5:5, ACC:0.42, TOP1:3, ACC:0.25
+
+微信 食堂开伙时间
+TOP5:False, TOP1:False
+['饿了么', '美团', '淘宝', '百度地图', '大众点评']
+TOTAL:13, TOP5:5, ACC:0.38, TOP1:3, ACC:0.23
+
+微信 清华专线
+TOP5:False, TOP1:False
+['无法根据提供的应用程序列表推断出最有可能使用的5个应用程序，因为没有与“清华专线”相关的应用程序。'] 
+TOTAL:14, TOP5:5, ACC:0.36, TOP1:3, ACC:0.21
+
+微信 X老师
+TOP5:True, TOP1:True
+['微信', 'QQ音乐', '豆瓣', '新浪微博', '知乎']
+TOTAL:15, TOP5:6, ACC:0.40, TOP1:4, ACC:0.27
+
+微信 Friday
+TOP5:False, TOP1:False
+['可能使用的5个应用程序: 没有找到任何应用程序。']
+TOTAL:16, TOP5:6, ACC:0.38, TOP1:4, ACC:0.25
+
+微信 晚饭
+TOP5:False, TOP1:False
+['美团', '携程', '饿了么', '大众点评', '淘宝']
+TOTAL:17, TOP5:6, ACC:0.35, TOP1:4, ACC:0.24
+
+微信 小五爷园
+TOP5:False, TOP1:False
+['无法给出可能使用的应用程序，因为在给定的应用程序列表中没有包含“小五爷园”这个关键词相关的应用程序。']
+TOTAL:18, TOP5:6, ACC:0.33, TOP1:4, ACC:0.22
+
+微信 ttttt
+TOP5:True, TOP1:False
+['百度', '搜狗', '微信', '淘宝', '支付宝']
+TOTAL:19, TOP5:7, ACC:0.37, TOP1:4, ACC:0.21
+
+微信 项目书.doc
+TOP5:False, TOP1:False
+['携程', '百度地图', '淘宝', '美团', '大众点评']
+TOTAL:20, TOP5:7, ACC:0.35, TOP1:4, ACC:0.20
+
+微信 明天在哪里
+TOP5:False, TOP1:False
+['携程旅行', '高德地图', '百度地图', '滴滴出行', '天眼查']
+TOTAL:21, TOP5:7, ACC:0.33, TOP1:4, ACC:0.19
+
+微信 生日快乐
+TOP5:True, TOP1:True
+['微信', 'QQ音乐', '百度贴吧', '知乎', '新浪微博']
+TOTAL:22, TOP5:8, ACC:0.36, TOP1:5, ACC:0.23
+
+微信 周
+TOP5:True, TOP1:True
+['微信', '知乎', '美团', '携程旅行', '今日头条']
+TOTAL:23, TOP5:9, ACC:0.39, TOP1:6, ACC:0.26
+
+微信 陈
+TOP5:True, TOP1:True
+['微信', '企查查', '天眼查', '陌陌', '滴滴出行']
+TOTAL:24, TOP5:10, ACC:0.42, TOP1:7, ACC:0.29
+
+爱奇艺 三体
+TOP5:False, TOP1:False
+['豆瓣阅读', '微信读书', '起点读书', '喜马拉雅', '知乎']
+TOTAL:25, TOP5:10, ACC:0.40, TOP1:7, ACC:0.28
+
+新浪微博 ChatGPT
+TOP5:False, TOP1:False
+['没有“ChatGPT”相关的应用程序。']
+TOTAL:26, TOP5:10, ACC:0.38, TOP1:7, ACC:0.27
+
+新浪微博 张颂文
+TOP5:False, TOP1:False
+['微信', '知乎', '豆瓣', '微博', '百度贴吧']
+TOTAL:27, TOP5:10, ACC:0.37, TOP1:7, ACC:0.26
+
+新浪微博 胡鑫宇
+TOP5:True, TOP1:False
+['微信', '知乎', '百度', '新浪微博', '牛客网']
+TOTAL:28, TOP5:11, ACC:0.39, TOP1:7, ACC:0.25
+
+新浪微博 柏浪涛
+TOP5:False, TOP1:False
+['微信', '微博', '知乎', '脉脉', '百度']
+TOTAL:29, TOP5:11, ACC:0.38, TOP1:7, ACC:0.24
+
+美团 和府捞面
+TOP5:True, TOP1:True
+['美团', '百度地图', '淘宝', '携程', '饿了么']
+TOTAL:30, TOP5:12, ACC:0.40, TOP1:8, ACC:0.27
+
+美团 肯德基
+TOP5:True, TOP1:True
+['美团', '饿了么', '淘宝', '大众点评', 'Keep']
+TOTAL:31, TOP5:13, ACC:0.42, TOP1:9, ACC:0.29
+
+美团 麦当劳
+TOP5:True, TOP1:True
+['美团', '饿了么', '百度地图', '大众点评', '淘宝']
+TOTAL:32, TOP5:14, ACC:0.44, TOP1:10, ACC:0.31
+
+美团 麻辣烫
+TOP5:True, TOP1:True
+['美团', '支付宝', '饿了么', '大众点评', '淘宝']
+TOTAL:33, TOP5:15, ACC:0.45, TOP1:11, ACC:0.33
+
+美团 kfc
+TOP5:True, TOP1:True
+['美团', '百度地图', '淘宝', '饿了么', '大众点评']
+TOTAL:34, TOP5:16, ACC:0.47, TOP1:12, ACC:0.35
+
+美团 米线
+TOP5:True, TOP1:True
+['美团', '饿了么', '淘宝', '携程', '百度地图']
+TOTAL:35, TOP5:17, ACC:0.49, TOP1:13, ACC:0.37
+
+美团 煲仔饭
+TOP5:True, TOP1:True
+['美团', '饿了么', '大众点评', '微信', '携程']
+TOTAL:36, TOP5:18, ACC:0.50, TOP1:14, ACC:0.39
+
+美团 鸡公煲
+TOP5:True, TOP1:True
+['美团', '携程', '饿了么', '大众点评', '百度地图']
+TOTAL:37, TOP5:19, ACC:0.51, TOP1:15, ACC:0.41
+
+美团 炸鸡
+TOP5:True, TOP1:True
+['美团', '饿了么', '淘宝', '今日头条', '百度']
+TOTAL:38, TOP5:20, ACC:0.53, TOP1:16, ACC:0.42
+
+美团 奶茶
+TOP5:True, TOP1:True
+['美团', '饿了么', '微信', '支付宝', '百度地图']
+TOTAL:39, TOP5:21, ACC:0.54, TOP1:17, ACC:0.44
+
+美团 电影院
+TOP5:True, TOP1:False
+['携程旅行', '大众点评', '美团', '百度地图', '滴滴出行']
+TOTAL:40, TOP5:22, ACC:0.55, TOP1:17, ACC:0.42
+
+美团 酒店
+TOP5:True, TOP1:False
+['携程旅行', '大众点评', '美团', '高德地图', '百度地图']
+TOTAL:41, TOP5:23, ACC:0.56, TOP1:17, ACC:0.41
+
+12306 北京 天津
+TOP5:False, TOP1:False
+['滴滴出行', '大众点评', '携程旅行', '天眼查', '同花顺']
+TOTAL:42, TOP5:23, ACC:0.55, TOP1:17, ACC:0.40
+
+12306 北京
+TOP5:False, TOP1:False
+['携程旅行', '高德地图', '百度地图', '滴滴出行', '今日头条']
+TOTAL:43, TOP5:23, ACC:0.53, TOP1:17, ACC:0.40
+
+12306 上海
+TOP5:False, TOP1:False
+['携程旅行', '大众点评', '淘宝', '美团', '百度地图']
+TOTAL:44, TOP5:23, ACC:0.52, TOP1:17, ACC:0.39
+
+知乎 颈椎病治疗
+TOP5:False, TOP1:False
+['应用程序之间用”', '"分隔：\n\n1.百度地图', '高德地图', 'ios地图\n\n2.天眼查\n\n3.淘宝\n\n4.携程\n\n5.大众点评']
+TOTAL:45, TOP5:23, ACC:0.51, TOP1:17, ACC:0.38
+
+知乎 股票发行注册制
+TOP5:False, TOP1:False
+['同花顺', '雪球', '百度贴吧', '微博', '天眼查']
+TOTAL:46, TOP5:23, ACC:0.50, TOP1:17, ACC:0.37
+
+知乎 幻方量化
+TOP5:False, TOP1:False
+['根据输入的关键词“幻方量化”，我手机里最有可能使用的5个应用程序按照使用概率从高到低排序是：\n高德地 图', '百度地图', '网易有道词典', '天眼查', '同花顺。']
+TOTAL:47, TOP5:23, ACC:0.49, TOP1:17, ACC:0.36
+
+知乎 清华大学新雅书院
+TOP5:True, TOP1:True
+['知乎', '百度', '豆瓣', '起点读书', '携程']
+TOTAL:48, TOP5:24, ACC:0.50, TOP1:18, ACC:0.38
+
+知乎 国家电网
+TOP5:False, TOP1:False
+['目前没有任何应用程序和“国家电网”有关，无法给出可能使用的应用程序。']
+TOTAL:49, TOP5:24, ACC:0.49, TOP1:18, ACC:0.37
+
+知乎 chatGPT
+TOP5:True, TOP1:False
+['微信', 'QQ音乐', '脉脉', '知乎', '新浪微博']
+TOTAL:50, TOP5:25, ACC:0.50, TOP1:18, ACC:0.36
+
+知乎 公务员考试
+TOP5:True, TOP1:False
+['携程旅行', '知乎', '豆瓣阅读', '起点读书', '百度地图']
+TOTAL:51, TOP5:26, ACC:0.51, TOP1:18, ACC:0.35
+
+哔哩哔哩 b站年度报告
+TOP5:True, TOP1:True
+['哔哩哔哩', '微博', '知乎', '今日头条', '百度贴吧']
+TOTAL:52, TOP5:27, ACC:0.52, TOP1:19, ACC:0.37
+
+哔哩哔哩 csgo
+TOP5:False, TOP1:False
+['暂无可能使用的应用程序。']
+TOTAL:53, TOP5:27, ACC:0.51, TOP1:19, ACC:0.36
+
+哔哩哔哩 战地2042
+TOP5:False, TOP1:False
+['无法确定用户的具体喜好和用途，因此无法进行排序，可能的应用程序有：\n\n微博', '百度', '百度贴吧', '知乎', '豆瓣阅读']
+TOTAL:54, TOP5:27, ACC:0.50, TOP1:19, ACC:0.35
+
+哔哩哔哩 俄乌冲突
+TOP5:False, TOP1:False
+['新浪微博', '知乎', '今日头条', '淘宝', '携程']
+TOTAL:55, TOP5:27, ACC:0.49, TOP1:19, ACC:0.35
+
+哔哩哔哩 美食作家王刚
+TOP5:False, TOP1:False
+['美团', '饿了么', '大众点评', '携程旅行', '天眼查']
+TOTAL:56, TOP5:27, ACC:0.48, TOP1:19, ACC:0.34
+
+哔哩哔哩 麻将规则
+TOP5:False, TOP1:False
+['知乎', '百度贴吧', '豆瓣', '百度', '淘宝']
+TOTAL:57, TOP5:27, ACC:0.47, TOP1:19, ACC:0.33
+
+哔哩哔哩 大连小王爱踢球
+TOP5:False, TOP1:False
+['无法给出排名，因为我无法确定可能使用的概率。以下是可能的应用程序：\n\n百度 ', ' 滴滴出行 ', ' 饿了么 ', ' 12306 ', ' 微信']
+TOTAL:58, TOP5:27, ACC:0.47, TOP1:19, ACC:0.33
+
+哔哩哔哩 中国奇谭
+TOP5:False, TOP1:False
+['携程旅行', '天眼查', '起点读书', '豆瓣', '新浪微博']
+TOTAL:59, TOP5:27, ACC:0.46, TOP1:19, ACC:0.32
+
+哔哩哔哩 饲养员小谢
+TOP5:False, TOP1:False
+['无法推断出最有可能使用的5个应用程序，因为手机里没有和关键词相关的应用程序。']
+TOTAL:60, TOP5:27, ACC:0.45, TOP1:19, ACC:0.32
+
+哔哩哔哩 土耳其
+TOP5:False, TOP1:False
+['此题无法作答，因为手机里的应用程序和关键词“土耳其”之间没有任何相关性，无法推测出可能使用的应用程序。']
+TOTAL:61, TOP5:27, ACC:0.44, TOP1:19, ACC:0.31
+
+哔哩哔哩 月亮要早睡
+TOP5:False, TOP1:False
+['抱歉，根据您提供的应用程序列表，无法推断出您最有可能使用的5个应用程序与“月亮要早睡”有关。请提供更 多相关信息或详细说明，以便我更好地为您提供服务。']
+TOTAL:62, TOP5:27, ACC:0.44, TOP1:19, ACC:0.31
+
+哔哩哔哩 九转大肠
+TOP5:False, TOP1:False
+['没有任何应用程序可以与“九转大肠”相关联，所以无法给出任何可能的应用程序。']
+TOTAL:63, TOP5:27, ACC:0.43, TOP1:19, ACC:0.30
+
+哔哩哔哩 郑钦文
+TOP5:False, TOP1:False
+['微信', '知乎', '百度', '新浪微博', '今日头条']
+TOTAL:64, TOP5:27, ACC:0.42, TOP1:19, ACC:0.30
+
+哔哩哔哩 流浪地球2片尾
+TOP5:False, TOP1:False
+['爱奇艺', '腾讯视频', '优酷', 'bilibili', '百度贴吧']
+TOTAL:65, TOP5:27, ACC:0.42, TOP1:19, ACC:0.29
+
+哔哩哔哩 焦裕禄
+TOP5:False, TOP1:False
+['答案如下：\n知乎', '豆瓣阅读', '豆瓣', '起点读书', '微信读书']
+TOTAL:66, TOP5:27, ACC:0.41, TOP1:19, ACC:0.29
+
+哔哩哔哩 土耳其地震
+TOP5:False, TOP1:False
+['今日头条', '微博', '百度', '知乎', '新浪微博']
+TOTAL:67, TOP5:27, ACC:0.40, TOP1:19, ACC:0.28
+
+哔哩哔哩 刘培茄
+TOP5:False, TOP1:False
+['无法给出答案，因为输入的关键词与应用程序列表没有关联性。']
+TOTAL:68, TOP5:27, ACC:0.40, TOP1:19, ACC:0.28
+
+哔哩哔哩 fgo
+TOP5:False, TOP1:False
+['暂无应用程序相关于“fgo”。']
+TOTAL:69, TOP5:27, ACC:0.39, TOP1:19, ACC:0.28
+
+QQ音乐 qq音乐年度报告
+TOP5:True, TOP1:True
+['QQ音乐', '网易云音乐', 'Spotify', '百度音乐', '酷狗音乐']
+TOTAL:70, TOP5:28, ACC:0.40, TOP1:20, ACC:0.29
+
+QQ音乐 搁浅
+TOP5:False, TOP1:False
+['得物', '小红书', '淘宝', '美团', '京东']
+TOTAL:71, TOP5:28, ACC:0.39, TOP1:20, ACC:0.28
+
+QQ音乐 林俊杰
+TOP5:True, TOP1:False
+['网易云音乐', 'QQ音乐', 'Spotify', '百度音乐', '酷狗音乐。']
+TOTAL:72, TOP5:29, ACC:0.40, TOP1:20, ACC:0.28
+
+QQ音乐 陶喆
+TOP5:True, TOP1:False
+['网易云音乐', 'QQ音乐', '百度音乐', 'Spotify', '酷狗音乐']
+TOTAL:73, TOP5:30, ACC:0.41, TOP1:20, ACC:0.27
+
+QQ音乐 丁世光
+TOP5:False, TOP1:False
+['微信', '新浪微博', '知乎', '百度', '今日头条']
+TOTAL:74, TOP5:30, ACC:0.41, TOP1:20, ACC:0.27
+
+网易云音乐 网易云年度报告
+TOP5:True, TOP1:True
+['网易云音乐', '百度', '微博', '知乎', '豆瓣阅读']
+TOTAL:75, TOP5:31, ACC:0.41, TOP1:21, ACC:0.28
+
+网易云音乐 只因你太美
+TOP5:True, TOP1:False
+['抖音', '微博', 'QQ音乐', '百度贴吧', '网易云音乐']
+TOTAL:76, TOP5:32, ACC:0.42, TOP1:21, ACC:0.28
+
+网易云音乐 我不曾忘记
+TOP5:True, TOP1:False
+['微信', 'QQ音乐', '网易云音乐', '百度音乐', '喜马拉雅']
+TOTAL:77, TOP5:33, ACC:0.43, TOP1:21, ACC:0.27
+
+网易云音乐 赵雷
+TOP5:True, TOP1:True
+['网易云音乐', 'QQ音乐', '喜马拉雅', '百度贴吧', '豆瓣阅读']
+TOTAL:78, TOP5:34, ACC:0.44, TOP1:22, ACC:0.28
+
+网易云音乐 深海
+TOP5:False, TOP1:False
+['今日头条', '知乎', '豆瓣阅读', '得物', '淘宝']
+TOTAL:79, TOP5:34, ACC:0.43, TOP1:22, ACC:0.28
+
+京东 小米蓝牙耳机
+TOP5:True, TOP1:True
+['京东', '淘宝', '得物', '美团', '携程']
+TOTAL:80, TOP5:35, ACC:0.44, TOP1:23, ACC:0.29
+
+京东 颈椎枕
+TOP5:True, TOP1:False
+['得物', '淘宝', '京东', '百度', '美团']
+TOTAL:81, TOP5:36, ACC:0.44, TOP1:23, ACC:0.28
+
+京东 机械硬盘
+TOP5:False, TOP1:False
+['没有任何应用程序与“机械硬盘”相关。']
+TOTAL:82, TOP5:36, ACC:0.44, TOP1:23, ACC:0.28
+
+今日头条 chatgpt
+TOP5:False, TOP1:False
+['无法给出答案，因为没有与关键词“chatgpt”相关的应用程序。']
+TOTAL:83, TOP5:36, ACC:0.43, TOP1:23, ACC:0.28
+
+豆瓣 满江红
+TOP5:False, TOP1:False
+['微博', '知乎', '百度贴吧', '百度', '豆瓣阅读']
+TOTAL:84, TOP5:36, ACC:0.43, TOP1:23, ACC:0.27
+
+豆瓣 无名
+TOP5:False, TOP1:False
+['无名  ', '  得物  ', '  牛客网  ', '  百度贴吧  ', '  滴滴出行']
+TOTAL:85, TOP5:36, ACC:0.42, TOP1:23, ACC:0.27
+
+豆瓣 流浪地球2
+TOP5:False, TOP1:False
+['暂时没有任何应用程序与关键词“流浪地球2”相关联，无法给出可能使用的应用程序。']
+TOTAL:86, TOP5:36, ACC:0.42, TOP1:23, ACC:0.27
+
+豆瓣 阿凡达
+TOP5:False, TOP1:False
+['没有可以匹配到“阿凡达”的应用程序，因此无法提供答案。']
+TOTAL:87, TOP5:36, ACC:0.41, TOP1:23, ACC:0.26
+
+腾讯视频 三体
+TOP5:False, TOP1:False
+['豆瓣阅读', '起点读书', '微信读书', '喜马拉雅', '百度贴吧']
+TOTAL:88, TOP5:36, ACC:0.41, TOP1:23, ACC:0.26
+
+东方航空 昆明-北京
+TOP5:False, TOP1:False
+['携程旅行', '去哪儿旅行', '淘宝', '大众点评', '12306']
+TOTAL:89, TOP5:36, ACC:0.40, TOP1:23, ACC:0.26
+
+大众点评 海淀川菜
+TOP5:True, TOP1:False
+['美团', '携程', '百度地图', '大众点评', '饿了么']
+TOTAL:90, TOP5:37, ACC:0.41, TOP1:23, ACC:0.26
+
+大众点评 德扑
+TOP5:False, TOP1:False
+['虎扑', '知乎', '携程', '牛客网', '微博']
+TOTAL:91, TOP5:37, ACC:0.41, TOP1:23, ACC:0.25
+
+大众点评 酸菜鱼
+TOP5:True, TOP1:False
+['美团', '大众点评', '饿了么', '携程', '百度地图']
+TOTAL:92, TOP5:38, ACC:0.41, TOP1:23, ACC:0.25
+
+淘宝 每日坚果
+TOP5:True, TOP1:False
+['得物', '淘宝', '美团', '饿了么', '百度贴吧']
+TOTAL:93, TOP5:39, ACC:0.42, TOP1:23, ACC:0.25
+
+淘宝 磁吸手机壳
+TOP5:True, TOP1:True
+['淘宝', '京东', '得物', '携程旅行', '美团']
+TOTAL:94, TOP5:40, ACC:0.43, TOP1:24, ACC:0.26
+
+淘宝 羽绒服
+TOP5:True, TOP1:True
+['淘宝', '京东', '得物', '美团', '百度贴吧']
+TOTAL:95, TOP5:41, ACC:0.43, TOP1:25, ACC:0.26
+
+淘宝 行李箱20寸
+TOP5:True, TOP1:False
+['携程旅行', '淘宝', '京东', '天眼查', '美团']
+TOTAL:96, TOP5:42, ACC:0.44, TOP1:25, ACC:0.26
+
+淘宝 Salomon
+TOP5:False, TOP1:False
+['没有找到与“Salomon”相关的应用程序。']
+TOTAL:97, TOP5:42, ACC:0.43, TOP1:25, ACC:0.26
+
+淘宝 情人节礼物
+TOP5:True, TOP1:True
+['淘宝', '京东', '得物', '美团', '百度贴吧']
+TOTAL:98, TOP5:43, ACC:0.44, TOP1:26, ACC:0.27
+
+淘宝 行李箱
+TOP5:True, TOP1:False
+['京东', '淘宝', '携程', '大众点评', '天眼查']
+TOTAL:99, TOP5:44, ACC:0.44, TOP1:26, ACC:0.26
+
+淘宝 键盘
+TOP5:False, TOP1:False
+['没有任何应用程序和关键词之间的匹配，所以无法给出可能的应用程序。']
+TOTAL:100, TOP5:44, ACC:0.44, TOP1:26, ACC:0.26
+
+支付宝 地铁
+TOP5:False, TOP1:False
+['携程旅行', '百度地图', '滴滴出行', '高德地图', '地铁通']
+TOTAL:101, TOP5:44, ACC:0.44, TOP1:26, ACC:0.26
+
+携程 北京
+TOP5:False, TOP1:False
+['滴滴出行', '大众点评', '携程旅行', '百度地图', '牛客网']
+TOTAL:102, TOP5:44, ACC:0.43, TOP1:26, ACC:0.25
+
+携程 酒店
+TOP5:False, TOP1:False
+['携程旅行', '大众点评', '美团', '饿了么', '滴滴出行']
+TOTAL:103, TOP5:44, ACC:0.43, TOP1:26, ACC:0.25
+
+携程 宁波
+TOP5:True, TOP1:False
+['美团', '携程', '滴滴出行', '大众点评', '百度地图']
+TOTAL:104, TOP5:45, ACC:0.43, TOP1:26, ACC:0.25
+
+keep 上肢力量
+TOP5:True, TOP1:True
+['keep', '豆瓣', '微信读书', '起点读书', '得物']
+TOTAL:105, TOP5:46, ACC:0.44, TOP1:27, ACC:0.26
+
+百度地图 上海15号线-永德路地铁站
+TOP5:True, TOP1:False
+['1. 高德地图', '百度地图', 'ios地图\n2. 携程旅行', '美团\n3. 滴滴出行', '饿了么\n4. 同花顺']       
+TOTAL:106, TOP5:47, ACC:0.44, TOP1:27, ACC:0.25
+
+百度地图 虹桥地铁站
+TOP5:True, TOP1:False
+['高德地图', '百度地图', '同花顺', '滴滴出行', '天眼查']
+TOTAL:107, TOP5:48, ACC:0.45, TOP1:27, ACC:0.25
+
+网易有道词典 hypophrenia
+TOP5:False, TOP1:False
+['抱歉，我无法回答这个问题，因为“hypophrenia”是一个不太常用的词汇，与我手机中的应用程序没有直接关联 。请给出更具体的上下文或信息，我会尽力给您提供最准确的答案。']
+TOTAL:108, TOP5:48, ACC:0.44, TOP1:27, ACC:0.25
+
+饿了么 小龙虾
+TOP5:True, TOP1:False
+['美团', '饿了么', '百度外卖', '大众点评', '淘宝']
+TOTAL:109, TOP5:49, ACC:0.45, TOP1:27, ACC:0.25
+
+饿了么 米粉
+TOP5:True, TOP1:False
+['美团', '饿了么', '淘宝', '京东', '百度贴吧']
+TOTAL:110, TOP5:50, ACC:0.45, TOP1:27, ACC:0.25
+
+微信读书 三体
+TOP5:True, TOP1:False
+['豆瓣', '起点读书', '微信读书', '喜马拉雅', '知乎']
+TOTAL:111, TOP5:51, ACC:0.46, TOP1:27, ACC:0.24
+
+滴滴出行 上海交通大学闵行校区
+TOP5:True, TOP1:False
+['高德地图', '百度地图', '携程旅行', '滴滴出行', '天眼查']
+TOTAL:112, TOP5:52, ACC:0.46, TOP1:27, ACC:0.24
+
+抖音 三三制战术
+TOP5:False, TOP1:False
+['没有我手机中的应用程序与“三三制战术”相关，所以无法给出最有可能使用的5个应用程序。']
+TOTAL:113, TOP5:52, ACC:0.46, TOP1:27, ACC:0.24
+
+抖音 背部训练计划
+TOP5:False, TOP1:False
+['keep', '得物', '携程', '大众点评', '淘宝']
+TOTAL:114, TOP5:52, ACC:0.46, TOP1:27, ACC:0.24
+
+抖音 布莱恩洛佩兹
+TOP5:False, TOP1:False
+['没有任何关键词与手机中的应用程序有任何联系，因此无法给出答案。']
+TOTAL:115, TOP5:52, ACC:0.45, TOP1:27, ACC:0.23
+
+起点读书 诡秘之主
+TOP5:True, TOP1:False
+['哔哩哔哩', '微博', '知乎', '起点读书', '百度贴吧']
+TOTAL:116, TOP5:53, ACC:0.46, TOP1:27, ACC:0.23
+
+百度 python list copy
+Traceback (most recent call last):
+  File "c:\Users\Andision\Documents\GitHub\NUIX\IntendPredict\GPT\test.gpt35.v1.py", line 28, in <module>
+    predictAppListAll = gpt.ChatGPTIntendApp(intend['文本输入'])
+  File "c:\Users\Andision\Documents\GitHub\NUIX\IntendPredict\GPT\gpt.py", line 57, in ChatGPTIntendApp
+    res = ChatGPTCompletionRaw(
+  File "c:\Users\Andision\Documents\GitHub\NUIX\IntendPredict\GPT\gpt.py", line 46, in ChatGPTCompletionRaw
+    completion = openai.ChatCompletion.create(
+  File "C:\Users\Andision\miniconda3\lib\site-packages\openai\api_resources\chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "C:\Users\Andision\miniconda3\lib\site-packages\openai\api_resources\abstract\engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "C:\Users\Andision\miniconda3\lib\site-packages\openai\api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "C:\Users\Andision\miniconda3\lib\site-packages\openai\api_requestor.py", line 619, in _interpret_response
+    self._interpret_response_line(
+  File "C:\Users\Andision\miniconda3\lib\site-packages\openai\api_requestor.py", line 682, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.RateLimitError: Rate limit reached for default-gpt-3.5-turbo in organization org-TnJTNyGSSWSa1rKwVOTARJHS on requests per min. Limit: 20 / min. Please try again in 3s. Contact support@openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
