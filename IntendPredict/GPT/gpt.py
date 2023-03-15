@@ -6,8 +6,9 @@ import json
 DEBUG_FALSE = -1
 DEBUG_INFO = 0
 DEBUG_VITAL = 10
-DEBUG_LEVEL = DEBUG_VITAL
-OPENAI_KEY = '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'
+DEBUG_LEVEL = DEBUG_INFO
+# DEBUG_LEVEL = DEBUG_VITAL
+LOCAL_FILE = "C:/Users/Andision/Documents/GitHub/NUIX/IntendPredict/config/local.json"
 INTEND_SAMPLE_FILE = "C:/Users/Andision/Documents/GitHub/NUIX/IntendPredict/config/intend.json"
 APP_LABELS_FILE = "C:/Users/Andision/Documents/GitHub/NUIX/IntendPredict/config/label.json"
 
@@ -21,6 +22,12 @@ with open(INTEND_SAMPLE_FILE, encoding='utf-8') as f:
     intendSamples = json.load(f)
 with open(APP_LABELS_FILE, encoding='utf-8') as f:
     AppLabels = json.load(f)
+with open(LOCAL_FILE, encoding='utf-8') as f:
+    LocalConfig = json.load(f)
+
+# Set OpenAI Key
+OPENAI_KEY = LocalConfig.openai_key
+
 
 # Get All App in Sample
 AppList = []

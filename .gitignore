@@ -29,3 +29,4 @@ npm-debug.log.*
 *.scss.d.ts
 *.pyc
 py/__pycache__/
+IntendPredict/config/local.json
