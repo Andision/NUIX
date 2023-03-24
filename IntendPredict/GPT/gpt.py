@@ -14,9 +14,6 @@ APP_LABELS_FILE = "C:/Users/Andision/Documents/GitHub/NUIX/IntendPredict/config/
 
 # ========== Init ==========
 
-# set OpenAI Key
-openai.api_key = OPENAI_KEY
-
 # Load JSON
 with open(INTEND_SAMPLE_FILE, encoding='utf-8') as f:
     intendSamples = json.load(f)
@@ -26,8 +23,7 @@ with open(LOCAL_FILE, encoding='utf-8') as f:
     LocalConfig = json.load(f)
 
 # Set OpenAI Key
-OPENAI_KEY = LocalConfig.openai_key
-
+openai.api_key = LocalConfig['openai_key']
 
 # Get All App in Sample
 AppList = []
@@ -63,6 +59,8 @@ def PrintLog(*msgs, tag="", level=DEBUG_INFO):
 
 
 def ChatGPTCompletionRaw(prompt: str, model: str = "gpt-3.5-turbo"):
+
+    PrintLog(prompt,tag='prompt')
 
     completion = openai.ChatCompletion.create(
         model=model,
@@ -120,7 +118,7 @@ def GetTopKeyInDict(inputDict: dict, top: int = -1) -> dict:
 
     return {i[0]: i[1] for i in ret}
 
-
+ChatGPTIntendApp('')
 
 
 
